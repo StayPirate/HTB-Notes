@@ -20,4 +20,5 @@ public:: true
 				- [Included]([[Included VM]])
 				- [Oopsie]([[Oopsie VM]])
 				- [Vaccine]([[Vaccine VM]])
+				- [Unified]([[Unified VM]])
 - ![Crazybyte](https://www.hackthebox.eu/badge/image/17859)
