@@ -41,6 +41,7 @@ tags:: reverse shell
 	  python -c 'import pty; pty.spawn("/bin/bash")'
 	  ```
 	- With `socat`
+	  id:: 65534bc6-4e92-4e47-aa27-491d85b83cdd
 		- On Kali (Attacker)
 		  
 		  ```bash

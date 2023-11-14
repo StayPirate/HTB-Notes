@@ -19,4 +19,5 @@ public:: true
 				- [Archetype]([[Archetype VM]])
 				- [Included]([[Included VM]])
 				- [Oopsie]([[Oopsie VM]])
+				- [Vaccine]([[Vaccine VM]])
 - ![Crazybyte](https://www.hackthebox.eu/badge/image/17859)
