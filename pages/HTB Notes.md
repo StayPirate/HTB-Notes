@@ -10,7 +10,7 @@ public:: true
 		- Exploit
 			- [Windows]([[Windows Exploits]])
 			- [Linux]([[Linux Exploits]])
-		- Reverse Shell
+		- [[Reverse Shells]]
 			- [Windows]([[Windows Reverse Shells]])
 			- [Linux]([[Linux Reverse Shells]])
 	- Game environments
