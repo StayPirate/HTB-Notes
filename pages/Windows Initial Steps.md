@@ -11,7 +11,7 @@ Tags:: powershell, windows,grep
   logseq.order-list-type:: number
   
   ```powershell
-  systeminfo | findstr /B /C:"Host Name" /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Hotfix(s)"
+  systeminfo | findstr /B /C:"Domain" /C:"Host Name" /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Hotfix(s)"
   ```
 - #### Check for stored credentials on the system
   logseq.order-list-type:: number
