@@ -22,4 +22,9 @@ public:: true
 				- [Vaccine]([[Vaccine VM]])
 				- [Unified]([[Unified VM]])
 				- [Base]([[Base VM]])
+	- Awesome tools and where to find them
+		- Network
+			- [[Ligolo-ng]]
+			- OpenSSH
+				- Tunnelling
 - ![Crazybyte](https://www.hackthebox.eu/badge/image/17859)
