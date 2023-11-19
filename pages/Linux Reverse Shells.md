@@ -2,7 +2,7 @@ public:: true
 tags:: reverse shell
 
 - ### One-liner reverse shell
-  For more reverse shell examples [check this out](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet).
+  For more reverse shell examples check  [here](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet) and [here](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#spawn-tty-shell).
 	- #### Just `bash`
 	  logseq.order-list-type:: number
 	  ```bash
@@ -61,11 +61,11 @@ tags:: reverse shell
 		  Ctrl-Z
 		  ```
 		- From Kali
-		  NB: This needs to be done within a `bash` session, `zsh` won't work.
 		  ```bash
-		  stty raw -echo
-		  fg
+		  # Works for both: bash and zsh
+		  stty raw -echo; fg
 		  ```
+		  *Please note that `bash` and `zsh` handle the `stty` command in a [different way](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#spawn-tty-shell).*
 		- Again within the reverse shell
 		  
 		  ```bash
