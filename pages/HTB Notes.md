@@ -18,6 +18,11 @@ public:: true
 				- Manual
 					- [Legacy Windows Tools]([[Manual AD Enumeration via Legacy Windows Tools]])
 					- [PowerView]([[Manual AD Enumeration via PowerView]])
+			- [Authentication]([[Active Directory Authentication]])
+				- [NTLM]([[AD NTLM Authentication]])
+				- [Kerberos]([[AD Kerberos Authentication]])
+				- x509 Certificate
+				- [[Cached AD Credentials]]
 			- Lateral Movement
 				- [Tips]([[AD Lateral Movement Tips]])
 	- Game environments
