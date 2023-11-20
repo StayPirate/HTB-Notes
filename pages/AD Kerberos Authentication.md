@@ -37,12 +37,12 @@ public:: true
 			- A session key, **encrypted with the user's password hash**.
 			  logseq.order-list-type:: number
 			  id:: 655a201b-448f-45dc-a8b7-2c8978dde0c2
-			- A *Ticket Granting Ticket* (TGT) **encrypted with a secret key (NTLM hash of the *krbtgt* account)** known only to the KDC. It cannot be decrypted by the client.
+			- A *Ticket-Granting Ticket* (TGT) **encrypted with a secret key (NTLM hash of the *krbtgt* account)** known only to the KDC. It cannot be decrypted by the client.
 			  logseq.order-list-type:: number
 			  id:: 655a4269-21dc-4947-a21d-5c89e404b561
 				- id:: 655b1bc6-5c5d-4c70-9d2b-f3f3d6458cb9
 				  #+BEGIN_PINNED
-				  The **TGT** *(Ticket Granting Ticket)* contains:
+				  The **TGT** *(Ticket-Granting Ticket)* contains:
 				  #+END_PINNED
 					- Information regarding the user
 					  logseq.order-list-type:: number
@@ -95,10 +95,12 @@ public:: true
 					  logseq.order-list-type:: number
 					- The client IP address needs to coincide with the TGT IP address.
 					  logseq.order-list-type:: number
-			- If the validation process succeeded, then the *ticket-granting service* (KDC) reply to the client with a *Ticket Granting Server Reply* (TGS-REP).
+			- If the validation process succeeded, then the *ticket-granting service* (KDC) reply to the client with a *Ticket Granting Service Reply* (TGS-REP).
 			  logseq.order-list-type:: number
-				- #+BEGIN_PINNED
-				  The **TGS-REP** *(Ticket Granting Server Reply)* contains:
+			  id:: 655b6438-aa29-434b-bdf9-75e172e85fd1
+				- id:: 655b6438-ee0f-4168-8a40-754613d2b793
+				  #+BEGIN_PINNED
+				  The **TGS-REP** *(Ticket Granting Service Reply)* contains:
 				  #+END_PINNED
 					- The name of the service for which access has been granted, **encrypted with the original [session key](((655b1795-7a37-4e7f-b428-6c9a34ab2cbf)))**.
 					  logseq.order-list-type:: number
