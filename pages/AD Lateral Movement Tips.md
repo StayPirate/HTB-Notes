@@ -3,17 +3,17 @@ public:: true
 - #+BEGIN_TIP
   While hunting for users to impersonate, if a user is dormant (they have not changed their password or logged in recently) we will cause less interference and draw less attention if we take over that account.
   #+END_TIP
-  From `PowerView`:
-  ```powershell
-  Get-NetUser | select cn,pwdlastset,lastlogon
-  ```
+	- From `PowerView`:
+	  ```powershell
+	  Get-NetUser | select cn,pwdlastset,lastlogon
+	  ```
 - #+BEGIN_TIP
   If a user hasn't changed their password since a recent password policy change, their password may be weaker than the current policy. This might make it more vulnerable to password attacks.
   #+END_TIP
-  From `PowerView`:
-  ```powershell
-  Get-NetUser | select cn,pwdlastset
-  ```
+	- From `PowerView`:
+	  ```powershell
+	  Get-NetUser | select cn,pwdlastset
+	  ```
 - #+BEGIN_TIP
   *We may not always want to escalate our privileges right away.*
   
