@@ -39,4 +39,6 @@ public:: true
 			- [[Ligolo-ng]]
 			- OpenSSH
 				- Tunnelling
+		- Windows
+			- [[Mimikatz]]
 - ![Crazybyte](https://www.hackthebox.eu/badge/image/17859)
