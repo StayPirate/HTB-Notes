@@ -25,6 +25,7 @@ public:: true
 		  ```
 	- Users and Groups
 		- Retrieve the list of all users in the domain
+		  id:: 655b6438-2cff-4396-b2d2-a9cf0077d0bb
 		  ```powershell
 		  Get-NetUser | select cn
 		  ```

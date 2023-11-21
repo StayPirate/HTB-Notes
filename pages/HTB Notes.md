@@ -23,6 +23,12 @@ public:: true
 				- [Kerberos]([[AD Kerberos Authentication]])
 				- x509 Certificate
 				- [[Cached AD Credentials]]
+				- Attack AD Authentication
+					- [Password Attacks]([[AD Authentication Password Attack]])
+					- [[AS-REP Roasting]]
+					- Kerberoasting
+					- Silver Tickets
+					- Domain Controller Synchronization
 			- Lateral Movement
 				- [Tips]([[AD Lateral Movement Tips]])
 	- Game environments
@@ -41,4 +47,6 @@ public:: true
 				- Tunnelling
 		- Windows
 			- [[Mimikatz]]
+			- [[CrackMapExec]]
+			- [[Kerbrute]]
 - ![Crazybyte](https://www.hackthebox.eu/badge/image/17859)

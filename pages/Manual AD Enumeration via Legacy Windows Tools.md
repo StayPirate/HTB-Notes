@@ -1,6 +1,7 @@
 public:: true
 
 - Enumerate domain users
+  id:: 655b6438-8ebc-46f6-a345-059d33f3ad83
   ```cmd
   net user /domain
   ```
