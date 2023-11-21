@@ -1,5 +1,4 @@
 alias:: ASREPRoast
-
 public:: true
 
 - In case the [Kerberos Pre-Authentication](((655b158a-a666-41e0-8076-e59942a7bb20))) is not enabled for one or more domain users, an [AS-REQ](((655b1c01-e1e1-4be0-b245-ff8c9482df38))) can be forged without knowing their password (or the hash) and sent to KDC on their behalf.
