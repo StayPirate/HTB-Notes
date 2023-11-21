@@ -23,31 +23,33 @@ public:: true
 		  ```powershell
 		  Get-NetDomain
 		  ```
-	- Users and Groups
+	- Users
 		- Retrieve the list of all users in the domain
 		  id:: 655b6438-2cff-4396-b2d2-a9cf0077d0bb
 		  ```powershell
 		  Get-NetUser | select cn
 		  ```
-			- Retrieve groups for a specific user
-			  ```powershell
-			  Get-NetGroup -UserName "joe"
-			  ```
+		- Retrieve groups for a specific user
+		  ```powershell
+		  Get-NetGroup -UserName "joe"
+		  ```
+		- {{embed ((655cf631-e9b4-4a1f-99d0-45c801c69f8c))}}
+	- Groups
 		- Retrieve the list of all groups in the domain
 		  *[Here](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups#default-active-directory-security-groups) the list of the default AD groups. Useful to quickly spot custom domain groups.*
 		  ```powershell
 		  Get-NetGroup | select cn
 		  ```
-			- Retrieve members of a specific group.
-			  ```powershell
-			  Get-NetGroup "Sales Department" | select member
-			  ```
-			  *(This include unresolved [nested groups](((6559cd1a-af38-44ff-b7ba-396d3c250b67))))*
-			- Retrieve a complete list of members of a specific group.
-			  ```powershell
-			  Get-NetGroupMember -Identity "Sales Department" -Recurse
-			  ```
-			  *(The `-Recurse` option will print the users inside [nested groups](((6559cd1a-af38-44ff-b7ba-396d3c250b67))))*
+		- Retrieve members of a specific group.
+		  ```powershell
+		  Get-NetGroup "Sales Department" | select member
+		  ```
+		  *(This include unresolved [nested groups](((6559cd1a-af38-44ff-b7ba-396d3c250b67))))*
+		- Retrieve a complete list of members of a specific group.
+		  ```powershell
+		  Get-NetGroupMember -Identity "Sales Department" -Recurse
+		  ```
+		  *(The `-Recurse` option will print the users inside [nested groups](((6559cd1a-af38-44ff-b7ba-396d3c250b67))))*
 	- Computers
 		- Retrieve the list of all domain joined computers
 		  ```powershell

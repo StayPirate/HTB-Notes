@@ -49,4 +49,10 @@ public:: true
 			- [[Mimikatz]]
 			- [[CrackMapExec]]
 			- [[Kerbrute]]
+			- [[Impacket]]
+				- [GetNPUsers]([[Impacket GetNPUsers]])
+			- [[Rubeus]]
+		- Cracking
+			- [[Hashcat]]
+			- [John The Ripper]([[JTR]])
 - ![Crazybyte](https://www.hackthebox.eu/badge/image/17859)

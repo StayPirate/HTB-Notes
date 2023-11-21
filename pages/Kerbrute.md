@@ -12,7 +12,9 @@ public:: true
 - Quickly bruteforce and enumerate valid Active Directory accounts through Kerberos Pre-Authentication.
 - id:: 655cbd1e-9c3e-4f5c-af2e-247535fac289
   #+BEGIN_NOTE
-  The advantage of this technique is that it **only uses two UDP frames** to determine whether the password is valid, as it sends only an AS-REQ and examines the response. Hence, it's faster and stealthier since **pre-authentication failures do not trigger** "*An account failed to log on*" event 4625.
+  The main advantage is that it **only uses two UDP frames** to determine whether the password is valid as it sends only an AS-REQ and examines the response, making it the faster online brute-force technique.
+  
+  It's also *kinda stealthier* than other methods since **pre-authentication failures do not trigger** "*An account failed to log on*" event 4625. However, the [KDC](((655a4269-4fa1-4988-b577-ad77f90064c0))) will log every [failed pre-authentication attempt](https://social.technet.microsoft.com/wiki/contents/articles/23559.kerberos-pre-authentication-why-it-should-not-be-disabled.aspx) by increasing the *badpwdcount* attribute for any incorrect `PA-ENC-TIMESTAMP` attempts.
   #+END_NOTE
 - Official [repository](https://github.com/ropnop/kerbrute)
 - Download binaries 💾 from official [releases](https://github.com/ropnop/kerbrute/releases)

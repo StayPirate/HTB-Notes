@@ -19,6 +19,8 @@ public:: true
 			- The timestamp, **encrypted with the NTLM hash of the user's password**
 			  logseq.order-list-type:: number
 			  id:: 655b158a-a666-41e0-8076-e59942a7bb20
+				- This is known as [*Kerberos Pre-Authentication*](https://social.technet.microsoft.com/wiki/contents/articles/23559.kerberos-pre-authentication-why-it-should-not-be-disabled.aspx) and prevents offline password guessing. It is enforced by default, but can be manually disabled for some accounts by explicitly setting [`DONT_REQ_PREAUTH`](https://learn.microsoft.com/en-US/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties).
+				  id:: 655cc72a-f6bf-40d2-bba0-8384e40186b9
 			- The username
 			  logseq.order-list-type:: number
 	- Once the KDC received the request, it uses the user's password hash *(stored in the NTDS.dit file)* to decrypt the timestamp.
