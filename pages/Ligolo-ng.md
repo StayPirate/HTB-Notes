@@ -1,10 +1,19 @@
 public:: true
 
-- ![image.png](../assets/image_1700209566785_0.png){:height 74, :width 280} 
+- ```
+      __    _             __                                                                                                                                                  
+     / /   (_)___ _____  / /___        ____  ____ _                                                                                                                           
+    / /   / / __ `/ __ \/ / __ \______/ __ \/ __ `/                                                                                                                           
+   / /___/ / /_/ / /_/ / / /_/ /_____/ / / / /_/ /                                                                                                                            
+  /_____/_/\__, /\____/_/\____/     /_/ /_/\__, /                                                                                                                             
+          /____/                          /____/                                                                                                                              
+  
+  Made in France ♥ by @Nicocha30!
+  ```
   An advanced, yet simple, tunneling/pivoting tool that uses a TUN interface.
 - Download Ligolo-ng artifacts from the [GH release page](https://github.com/nicocha30/ligolo-ng/releases)
-	- Download the proxy *(AKA server)* for our Kali Linux from
-	- Download the agent *(AKA client)* for the platform/arch we want to pivot from
+	- Download the proxy *(AKA server)* to run on Kali.
+	- Download the agent *(AKA client)* for the target pivoting machine. Choose the correct platform/architecture.
 - Server configuration
 	- First we need to create a dedicated TUN interface.
 	  ```bash

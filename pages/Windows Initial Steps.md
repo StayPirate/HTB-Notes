@@ -39,12 +39,11 @@ Tags:: powershell, windows,grep
 	  ```powershell
 	  cmd.exe /c dir /a C:\
 	  ```
-	- ==TODO==: Search in both Program Files directories
-	  background-color:: pink
-	  
+	- Search in `C:\Programs Files`
 	  ```powershell
 	  cmd.exe /c dir /a C:\Program........
 	  ```
+		- TODO Search in both Program Files directories
 - logseq.order-list-type:: number
 	- `icacls` (built-in)
 	  logseq.order-list-type:: number

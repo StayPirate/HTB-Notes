@@ -54,5 +54,5 @@ public:: true
 			- [[Rubeus]]
 		- Cracking
 			- [[Hashcat]]
-			- [John The Ripper]([[JTR]])
+			- [[John The Ripper]]
 - ![Crazybyte](https://www.hackthebox.eu/badge/image/17859)

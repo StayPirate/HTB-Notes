@@ -47,14 +47,13 @@ tags:: lxc, apache, htaccess, htpasswd, tftp
 	  > curl "http://10.129.38.202/?file=../../../../../../../../var/www/html/.htpasswd"
 	  mike:Sheffield19
 	  ```
-	  ===TODO===: Search for a wordlist optimized for webservers file and use it with `gobuster`.
-	  #+BEGIN_CAUTION
-	  mike:Sheffield19
-	  #+END_CAUTION
-	  
-	  #+BEGIN_TIP
-	  I now have the username and password coming from a `.htpasswd` file. Maybe `mike` reuse the same password for his OS user.
-	  #+END_TIP
+		- TODO Search for a wordlist optimized for webservers file and use it with `gobuster`.
+		- #+BEGIN_CAUTION
+		  mike:Sheffield19
+		  #+END_CAUTION
+		- #+BEGIN_TIP
+		  I now have the username and password coming from a `.htpasswd` file. Maybe `mike` reuse the same password for his OS user.
+		  #+END_TIP
 	- I can upload files via [TFTP](logseq://graph/HTB-Notes?block-id=655238b7-09f8-454b-ba4a-40a2d4b29455) and execute php file via the [LFI](logseq://graph/HTB-Notes?block-id=655238e3-68b6-42e6-9ec4-6edf9f86c35e).
 		- Upload a php shell via TFTP.
 		- Execute the php shell with the LFI.
