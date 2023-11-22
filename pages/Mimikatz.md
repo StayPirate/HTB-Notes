@@ -51,16 +51,10 @@ public:: true
 - Abusing TGT and service tickets
 	- A different approach and use of Mimikatz is to exploit Kerberos authentication by abusing [*TGT*](((655a1fb1-47f5-446a-8813-e1a809f05a7b))) and [*service tickets*](((655b6438-ee0f-4168-8a40-754613d2b793))). As [mentioned here](((655a2173-161c-473c-bb1f-f4f6ee9aa3d9))), *TGT* and *service tickets* for users currently logged on to the local machine are stored for future use. These tickets are also stored in LSASS, and we can use Mimikatz to interact with and retrieve our own tickets as well as the tickets of other local users.
 		- id:: 655b726e-0d43-4563-8113-26fa050e7731
-		  #+BEGIN_CENTER
-		  SILVER TICKET
-		  #+END_CENTER 
 		  #+BEGIN_CAUTION
 		  Stealing a [**TGS**](((655b6438-aa29-434b-bdf9-75e172e85fd1))) would allow us to access only particular resources associated with those tickets.
 		  #+END_CAUTION
 		- id:: 655b7297-4e11-496a-be73-935b85edd3bb
-		  #+BEGIN_CENTER
-		  GOLDEN TICKET
-		  #+END_CENTER 
 		  #+BEGIN_CAUTION
 		  Stealing a [**TGT**](((655a4269-a509-429f-95ea-ce8b6582cf9c))) would allow us to  request a TGS for specific resources we want to target within the domain. It can use to forge arbitrary TGS.
 		  #+END_CAUTION
