@@ -138,6 +138,7 @@ public:: true
 				  logseq.order-list-type:: number
 		- The application server dcrypts the [*service ticket*](((655b24f3-a272-4dc0-814f-e7b3a4edf632))) with the NTML hash of the password associated to the service it is hosting. Please remind that this ticket was crated by the KDC and encrypted to make it readable only by the application server.
 		  logseq.order-list-type:: number
+		  id:: 655b6438-6055-4038-b37b-457c7b623610
 			- The application server decrypts and extracts:
 				- The username of the user who requests access
 				  logseq.order-list-type:: number

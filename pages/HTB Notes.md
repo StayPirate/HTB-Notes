@@ -26,7 +26,9 @@ public:: true
 				- Attack AD Authentication
 					- [Password Attacks]([[AD Authentication Password Attack]])
 					- [[AS-REP Roasting]]
-					- Kerberoasting
+					- [[Kerberoasting]]
+						- [Targeted Kerberoasting](logseq://graph/HTB-Notes?block-id=655e327e-5e4b-4260-828e-33941dad976c)
+						  id:: 655e33c3-0c50-48d0-88d8-1c03abf25caa
 					- Silver Tickets
 					- Domain Controller Synchronization
 			- Lateral Movement
@@ -51,6 +53,7 @@ public:: true
 			- [[Kerbrute]]
 			- [[Impacket]]
 				- [GetNPUsers]([[Impacket GetNPUsers]])
+				- [GetUserSPNs]([[Impacket_GetUserSPNs]])
 			- [[Rubeus]]
 		- Cracking
 			- [[Hashcat]]

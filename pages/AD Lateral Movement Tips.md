@@ -21,3 +21,4 @@ public:: true
   If, for example, the password is reset for the user we originally obtained access to, or the system administrators notice suspicious activity and disable the account, we would still have access to the domain via other users we compromised.
   #+END_TIP
 - {{embed ((655cf4a9-95ae-4eb8-be69-cd1fb9b251c6))}}
+- {{embed ((655e327e-5e4b-4260-828e-33941dad976c))}}

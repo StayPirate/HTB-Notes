@@ -23,7 +23,7 @@ public:: true
 		  ```
 - id:: 655cf4a9-95ae-4eb8-be69-cd1fb9b251c6
   #+BEGIN_TIP
-  If you have GenericWrite/GenericAll rights over a target user, you can maliciously [modify their userAccountControl](https://learn.microsoft.com/en-US/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties) to [not require preauth](((655b158a-a666-41e0-8076-e59942a7bb20))), use [[AS-REP Roasting]] , and then reset the value.
+  If you have **GenericWrite** or **GenericAll** rights over a target user, you can maliciously [modify their userAccountControl](https://learn.microsoft.com/en-US/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties) to [not require preauth](((655b158a-a666-41e0-8076-e59942a7bb20))), use [[AS-REP Roasting]] , and then reset the value.
   #+END_TIP
 - Retrieve ASREPRoast hashes
 	- From Linux with [[Impacket GetNPUsers]]
