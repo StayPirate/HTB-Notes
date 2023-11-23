@@ -33,7 +33,7 @@ public:: true
 		- id:: 655e2029-2d0e-476f-9c58-c69ce7906fa7
 		  ```powershell
 		  # List any service principals associated with an AD user account
-		  Get-NetUser -SPN | select serviceprincipalname
+		  Get-NetUser -SPN | select samaccountname,serviceprincipalname
 		  ```
 	- From Linux with [[GetUserSPNs]]
 		- id:: 655e2491-e204-4c69-859d-53d7425c4419

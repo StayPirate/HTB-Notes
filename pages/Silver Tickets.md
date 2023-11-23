@@ -1,0 +1,2 @@
+- [As we know](((655b6438-6055-4038-b37b-457c7b623610))), in the Kerberos protocol, user's permissions included in the TGS (in the PAC block) are checked **by the application server** and not from the domain controller, except if PAC validation is enabled.
+- {{embed ((655b6438-5c8b-457f-a027-dffc35de2193))}}

@@ -1,6 +1,6 @@
 public:: true
 
-- Since Microsoft's implementation of Kerberos makes use of *single sign-on*, password hashes must be stored somewhere in order to [renew a TGT request](((655a2173-161c-473c-bb1f-f4f6ee9aa3d9))).
+- Since Microsoft's implementation of Kerberos makes use of *single sign-on*, password hashes must be stored somewhere in order to [renew a TGT request]().
 	- In modern versions of Windows, these hashes are stored in the *Local Security Authority Subsystem Service* ([LSASS](https://en.wikipedia.org/wiki/Local_Security_Authority_Subsystem_Service)) memory space.
 	- the *LSASS* process is part of the operating system and runs as SYSTEM. If we manage to get access to SYSTEM (or local administrator) permissions we can then dump the process' memory to retrieve the hashes stored on a target machine. The most complete tool for this purpose is probably [[Mimikatz]].
 - Active Directory Certificate Services

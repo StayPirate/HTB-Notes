@@ -49,7 +49,7 @@ public:: true
 	- Sometimes Mimikatz returns plain-text passwords instead of their hashes, this is because [WDigest](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc778868(v=ws.10)?redirectedfrom=MSDN) is enabled.
 	- That's the case of older operating systems like Windows 7, or operating systems where Wdigest has been manually enabled.
 - Abusing TGT and service tickets
-	- A different approach and use of Mimikatz is to exploit Kerberos authentication by abusing [*TGT*](((655a1fb1-47f5-446a-8813-e1a809f05a7b))) and [*service tickets*](((655b6438-ee0f-4168-8a40-754613d2b793))). As [mentioned here](((655a2173-161c-473c-bb1f-f4f6ee9aa3d9))), *TGT* and *service tickets* for users currently logged on to the local machine are stored for future use. These tickets are also stored in LSASS, and we can use Mimikatz to interact with and retrieve our own tickets as well as the tickets of other local users.
+	- A different approach and use of Mimikatz is to exploit Kerberos authentication by abusing [*TGT*](((655a1fb1-47f5-446a-8813-e1a809f05a7b))) and [*service tickets*](((655b6438-ee0f-4168-8a40-754613d2b793))). As [mentioned here](), *TGT* and *service tickets* for users currently logged on to the local machine are stored for future use. These tickets are also stored in LSASS, and we can use Mimikatz to interact with and retrieve our own tickets as well as the tickets of other local users.
 		- id:: 655b726e-0d43-4563-8113-26fa050e7731
 		  #+BEGIN_CAUTION
 		  Stealing a [**TGS**](((655b6438-aa29-434b-bdf9-75e172e85fd1))) would allow us to access only particular resources associated with those tickets.
