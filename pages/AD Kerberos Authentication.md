@@ -20,12 +20,16 @@ public:: true
 		  #+BEGIN_PINNED
 		  The **AS-REQ** *(Authentication Server Request)* contains:
 		  #+END_PINNED
-		  #+BEGIN_CENTER
-		  {{renderer excalidraw, excalidraw-2023-11-23-18-29-28}}
-		  #+END_CENTER
+			- collapsed:: true
+			  #+BEGIN_CENTER
+			  ![image.png](../assets/image_1700770539817_0.png) 
+			  #+END_CENTER
+				- #+BEGIN_CENTER
+				  {{renderer excalidraw, excalidraw-2023-11-23-18-29-28}}
+				  #+END_CENTER
 			- The timestamp, **encrypted with the NTLM hash of the user's password**
-			  logseq.order-list-type:: number
 			  id:: 655b158a-a666-41e0-8076-e59942a7bb20
+			  logseq.order-list-type:: number
 				- This is known as [*Kerberos Pre-Authentication*](https://social.technet.microsoft.com/wiki/contents/articles/23559.kerberos-pre-authentication-why-it-should-not-be-disabled.aspx) and prevents offline password guessing. It is enforced by default, but can be manually disabled for some accounts by explicitly setting [`DONT_REQ_PREAUTH`](https://learn.microsoft.com/en-US/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties).
 				  id:: 655cc72a-f6bf-40d2-bba0-8384e40186b9
 			- The username
@@ -227,7 +231,7 @@ public:: true
 			  logseq.order-list-type:: number
 				- This is optional and only used if the service wants to identify itself against the user
 				- #+BEGIN_PINNED
-id:: 655f46a0-b332-479e-9d95-4b2db10a9529
+				  id:: 655f46a0-b332-479e-9d95-4b2db10a9529
 				  The **AP-REP** *(Application Reply)* contains:
 				  #+END_PINNED
 					- TODO asd
