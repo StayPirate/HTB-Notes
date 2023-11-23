@@ -238,8 +238,8 @@ public:: true
 			- In case mutual authentication is needed, the service can return an AP-REP to the user.
 			  logseq.order-list-type:: number
 				- This is optional and only used if the service wants to identify itself against the user
-				- #+BEGIN_PINNED
-				  id:: 655f46a0-b332-479e-9d95-4b2db10a9529
+				- id:: 655fb0f2-d109-45fd-bf94-28ce90974744
+				  #+BEGIN_PINNED
 				  The **AP-REP** *(Application Reply)* contains:
 				  #+END_PINNED
 					- TODO asd
@@ -279,7 +279,7 @@ public:: true
 		  logseq.order-list-type:: number
 		- The domain controller perform the verification and return the outcome (RPC status code) to the application server.
 		  logseq.order-list-type:: number
-		- The application server provides the [AP-REP](((655f46a0-b332-479e-9d95-4b2db10a9529))) to the user only if the verification was successful.
+		- The application server provides the [AP-REP](((655fb0f2-d109-45fd-bf94-28ce90974744))) to the user only if the verification was successful.
 		  logseq.order-list-type:: number
 	- Check if PAC validation is enabled on the target machine
 	  id:: 655f4e98-766b-46fd-94f0-c385b24b5160
