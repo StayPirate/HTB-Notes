@@ -24,9 +24,7 @@ public:: true
 			  #+BEGIN_CENTER
 			  ![image.png](../assets/image_1700770539817_0.png) 
 			  #+END_CENTER
-				- #+BEGIN_CENTER
-				  {{renderer excalidraw, excalidraw-2023-11-23-18-29-28}}
-				  #+END_CENTER
+				- {{renderer excalidraw, excalidraw-2023-11-23-18-29-28}}
 			- The timestamp, **encrypted with the NTLM hash of the user's password**
 			  id:: 655b158a-a666-41e0-8076-e59942a7bb20
 			  logseq.order-list-type:: number
@@ -53,9 +51,11 @@ public:: true
 		  #+BEGIN_PINNED
 		  The **AS-REP** *(Authentication Server Reply)* contains:
 		  #+END_PINNED
-		  #+BEGIN_CENTER
-		  {{renderer excalidraw, excalidraw-2023-11-23-18-50-49}}
-		  #+END_CENTER
+			- collapsed:: true
+			  #+BEGIN_CENTER
+			  ![image.png](../assets/image_1700772338782_0.png) 
+			  #+END_CENTER
+				- {{renderer excalidraw, excalidraw-2023-11-23-18-50-49}}
 			- The username
 			  logseq.order-list-type:: number
 			- A session key, **encrypted with the user's password hash**.
@@ -73,9 +73,11 @@ public:: true
 				  #+BEGIN_PINNED
 				  The **TGT** *(Ticket-Granting Ticket)* contains:
 				  #+END_PINNED
-				  #+BEGIN_CENTER
-				  {{renderer excalidraw, excalidraw-2023-11-23-19-11-52}}
-				  #+END_CENTER
+					- collapsed:: true
+					  #+BEGIN_CENTER
+					  ![image.png](../assets/image_1700772398627_0.png) 
+					  #+END_CENTER
+						- {{renderer excalidraw, excalidraw-2023-11-23-19-11-52}}
 					- Username
 					  logseq.order-list-type:: number
 					- The same [session key above](((655b1795-7a37-4e7f-b428-6c9a34ab2cbf))), but **not encrypted** with the user's password hash.
@@ -106,9 +108,11 @@ public:: true
 			- #+BEGIN_PINNED
 			  The **TGS-REQ** *(Ticket Granting Service Request)* contains:
 			  #+END_PINNED
-			  #+BEGIN_CENTER
-			  {{renderer excalidraw, excalidraw-2023-11-23-19-19-53}} 
-			  #+END_CENTER
+				- collapsed:: true
+				  #+BEGIN_CENTER
+				  ![image.png](../assets/image_1700772483230_0.png)  
+				  #+END_CENTER
+					- {{renderer excalidraw, excalidraw-2023-11-23-19-19-53}}
 				- Username, **encrypted with the [session key](((655b1795-7a37-4e7f-b428-6c9a34ab2cbf)))**
 				  logseq.order-list-type:: number
 				- A timestamp, **encrypted with the [session key](((655b1795-7a37-4e7f-b428-6c9a34ab2cbf)))**
@@ -140,9 +144,11 @@ public:: true
 				  #+BEGIN_PINNED
 				  The **TGS-REP** *(Ticket Granting Service Reply)* contains:
 				  #+END_PINNED
-				  #+BEGIN_CENTER
-				  {{renderer excalidraw, excalidraw-2023-11-23-19-29-30}} 
-				  #+END_CENTER
+					- collapsed:: true
+					  #+BEGIN_CENTER
+					  ![image.png](../assets/image_1700772521200_0.png)  
+					  #+END_CENTER
+						- {{renderer excalidraw, excalidraw-2023-11-23-19-29-30}}
 					- Username
 					  logseq.order-list-type:: number
 					- The name of the service for which access has been granted, **encrypted with the original [session key](((655b1795-7a37-4e7f-b428-6c9a34ab2cbf)))**.
@@ -182,9 +188,11 @@ public:: true
 			  #+BEGIN_PINNED
 			  The **AP-REQ** *(Application Request)* contains:
 			  #+END_PINNED
-			  #+BEGIN_CENTER
-			  {{renderer excalidraw, excalidraw-2023-11-23-19-41-03}} 
-			  #+END_CENTER
+				- collapsed:: true
+				  #+BEGIN_CENTER
+				  ![image.png](../assets/image_1700772562680_0.png)
+				  #+END_CENTER
+					- {{renderer excalidraw, excalidraw-2023-11-23-19-41-03}}
 				- The username, **encrypted the newly created [session key](((655a24b4-cedb-469a-91c2-8d5e46cbcd2c)))** *(the one associated with the service ticket)*.
 				  logseq.order-list-type:: number
 				- The timestamp, **encrypted the newly created [session key](((655a24b4-cedb-469a-91c2-8d5e46cbcd2c)))** *(the one associated with the service ticket)*.
