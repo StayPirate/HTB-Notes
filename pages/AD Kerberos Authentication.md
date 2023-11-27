@@ -223,7 +223,7 @@ public:: true
 					  #+BEGIN_CAUTION
 					  Fun fact, in the majority of environments user and group permissions **are not verified** by the application.
 					  
-					  Most applications **blindly trust** the integrity of the service ticket since it is encrypted with a password hash that is, in theory, only known to the [service account and the domain controller](((655b6438-17f0-4630-8e60-b35fe308c2ca))).
+					  Most applications **blindly trust** the integrity of the TGS since it is encrypted with a password hash that is, in theory, only known to the [service account and the domain controller](((655a24c7-b91e-4a45-8468-c565395f566e))).
 					  #+END_CAUTION
 					- If [PAC validation is enabled](((655f4e98-766b-46fd-94f0-c385b24b5160))), the application server contacts the KDC to validate the signature of the received PAC.
 					  id:: 655f615a-5051-4943-9791-934b3b6173bb
