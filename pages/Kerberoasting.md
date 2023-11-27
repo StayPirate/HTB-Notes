@@ -19,9 +19,9 @@ public:: true
 	  logseq.order-list-type:: number
 - id:: 655e327e-5e4b-4260-828e-33941dad976c
   #+BEGIN_TIP
-  In case we have **GenericWrite** or **GenericAll** permissions on another AD user account. We could reset the user's password but *this may raise suspicion*. However, we could also [set an SPN](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731241(v=ws.11)) for the user, kerberoast the account, and crack the password hash in an attack named **Targeted Kerberoasting**.
+  In case you have **GenericWrite** or **GenericAll** permissions on another AD user account you could reset the user's password but *this may raise suspicion*. However, you could also [set an SPN](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731241(v=ws.11)) for the user *(kerberoast the account)* and crack the password hash in an attack named **Targeted Kerberoasting**.
   
-  Do not forget to delete the SPN once we've obtained the hash!
+  Do not forget to delete the SPN once you've obtained the hash!
   #+END_TIP
 - Retrieve the list of SPNs associated to AD users accounts.
   *(Kerberoastable users)*
@@ -47,9 +47,9 @@ public:: true
 - #+BEGIN_PINNED
   Kerberoasting [tools](https://blog.harmj0y.net/redteaming/kerberoasting-revisited/) typically request **RC4** encryption when performing the attack and initiating TGS-REQ requests.
   
-  This is because RC4 is [weaker](https://www.stigviewer.com/stig/windows_10/2017-04-28/finding/V-63795) and easier to crack offline using tools such as [[Hashcat]] than other encryption algorithms such as AES-128 and AES-256.
+  This is because *RC4* is [weaker](https://www.stigviewer.com/stig/windows_10/2017-04-28/finding/V-63795) and easier to crack offline using tools such as [[Hashcat]], compared to other encryption algorithms such as *AES-128* and *AES-256*.
   
-  *RC4 (type 23)* hashes begin with `$krb5tgs$23$*` while *AES-256(type 18)* start with `$krb5tgs$18$*`.
+  *RC4* (type 23) hashes begin with `$krb5tgs$23$*` while *AES-256* (type 18) start with `$krb5tgs$18$*`.
   #+END_PINNED
 - Retrieve TGS-REPs for Kerberoastable users
 	- From Windows with [[Rubeus]]

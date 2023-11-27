@@ -132,7 +132,7 @@
  ;; 2. Set "Jun 3rd, 2021" as the home page without the right sidebar:
  ;; :default-home {:page "Jun 3rd, 2021"}
  ;; 3. Set "home" as the home page and display multiple pages in the right sidebar:
- :default-home {:page "HTB Notes"}
+ :default-home {:page "Index"}
 
  ;; Set the default location for storing notes.
  ;; Default value: "pages"
@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["HTB Notes"]
+ :favorites ["Hack The Box" "HTB Notes"]
 
  ;; Set flashcards interval.
  ;; Expected value:
@@ -414,4 +414,6 @@
  :file/name-format :triple-lowbar
  :ui/show-brackets? false
  :feature/enable-journals? false
- :feature/enable-flashcards? false}
+ :feature/enable-flashcards? false
+ :graph/settings {:orphan-pages? false
+ :excluded-pages? true}}

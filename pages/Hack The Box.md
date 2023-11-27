@@ -1,0 +1,13 @@
+- ![Pit Writeup | Hack The Box | IoT Lab KIIT](https://miro.medium.com/v2/resize:fit:1358/1*wO9IIrgMkYP0C0ZItKbY5Q.png){:height 101, :width 469}
+  This is a collection of personal notes taken while playing at various [**Hack The Box**](https://app.hackthebox.com) challenges.
+- VMs
+	- Starting Point
+		- Tier 2
+			- [Archetype]([[Archetype VM]])
+			- [Included]([[Included VM]])
+			- [Oopsie]([[Oopsie VM]])
+			- [Vaccine]([[Vaccine VM]])
+			- [Unified]([[Unified VM]])
+			- [Base]([[Base VM]])
+			- [Markup]([[Markup VM]])
+- ![Crazybyte](https://www.hackthebox.eu/badge/image/17859)

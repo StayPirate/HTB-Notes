@@ -1,0 +1,55 @@
+public:: true
+
+- #+BEGIN_QUOTE
+  [whoami](https://gianlu.ca)
+  #+END_QUOTE
+- Knowledge Base
+	- Initial Steps
+		- [Windows]([[Windows Initial Steps]])
+		- [Linux]([[Linux Initial Steps]])
+		- [Webserver]([[Webserver Initial Steps]])
+	- Exploit
+		- [Windows]([[Windows Exploits]])
+		- [Linux]([[Linux Exploits]])
+	- [[Reverse Shells]]
+		- [Windows]([[Windows Reverse Shells]])
+		- [Linux]([[Linux Reverse Shells]])
+	- [[Active Directory]]
+		- Enumeration
+			- Manual
+				- [Legacy Windows Tools]([[Manual AD Enumeration via Legacy Windows Tools]])
+				- [PowerView]([[Manual AD Enumeration via PowerView]])
+		- [Authentication]([[Active Directory Authentication]])
+			- [[NTLM Authentication]]
+			- [Kerberos]([[AD Kerberos Authentication]])
+			- [[RC4-HMAC]]
+			- x509 Certificate
+			- [[Cached AD Credentials]]
+			- Attack AD Authentication
+				- [Password Attacks]([[AD Authentication Password Attack]])
+				- [[AS-REP Roasting]]
+				- [[Kerberoasting]]
+					- [Targeted Kerberoasting](logseq://graph/HTB-Notes?block-id=655e327e-5e4b-4260-828e-33941dad976c)
+					  id:: 655e33c3-0c50-48d0-88d8-1c03abf25caa
+				- [[Silver Tickets]]
+				- Domain Controller Synchronization
+		- Lateral Movement
+			- [Tips]([[AD Lateral Movement Tips]])
+	- Awesome tools and where to find them
+		- Network
+			- [[Ligolo-ng]]
+			- OpenSSH
+				- Tunnelling
+		- Windows
+			- [[Mimikatz]]
+			- [[CrackMapExec]]
+			- [[Kerbrute]]
+			- [[Impacket]]
+				- [GetNPUsers]([[Impacket GetNPUsers]])
+				- [GetUserSPNs]([[Impacket_GetUserSPNs]])
+			- [[Rubeus]]
+		- Cracking
+			- [[Hashcat]]
+			- [[John The Ripper]]
+- Labs and CTFs
+	- [[Hack The Box]]
