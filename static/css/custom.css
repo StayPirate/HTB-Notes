@@ -1,1 +1,39 @@
 @import url("https://cdn.jsdelivr.net/gh/pengx17/logseq-dev-theme@main/no_bullet_threading.css");
+
+/* Show external link URLs on hover */
+/* Desktop devices only */
+@media (min-width: 768px) {
+  a.external-link {
+    position: relative;
+  }
+
+  a.external-link::after {
+    content: attr(href);
+    font-size: 0.8em;
+    display: block;
+    position: absolute;
+    background-color: var(--ls-secondary-background-color);
+    color: var(--ls-external-link-color);
+    z-index: 9999;
+    pointer-events: none;
+    padding: 0.3em 0.6em;
+    border-radius: 0.2em;
+    opacity: 0;
+    transition: opacity 300ms 600ms;
+    border-color: var(--ls-border-color);
+    border-width: 2px;
+    left: 0;
+    top: 100%;
+    white-space: nowrap;
+    margin-top: 0.3em;
+  }
+
+  a.external-link:hover {
+    opacity: 1;
+  }
+
+  a.external-link:hover::after {
+    opacity: 1 !important;
+    transition: opacity 500ms 200ms;
+  }
+}
