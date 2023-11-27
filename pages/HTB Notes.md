@@ -21,6 +21,7 @@ public:: true
 			- [Authentication]([[Active Directory Authentication]])
 				- [NTLM]([[AD NTLM Authentication]])
 				- [Kerberos]([[AD Kerberos Authentication]])
+				- [[RC4-HMAC]]
 				- x509 Certificate
 				- [[Cached AD Credentials]]
 				- Attack AD Authentication

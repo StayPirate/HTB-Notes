@@ -58,7 +58,7 @@ public:: true
 			  #+END_PINNED
 				- collapsed:: true
 				  #+BEGIN_CENTER
-				  ![image.png](../assets/image_1700772338782_0.png) 
+				  ![image.png](../assets/image_1700772338782_0.png){:height 247, :width 658} 
 				  #+END_CENTER
 					- {{renderer excalidraw, excalidraw-2023-11-23-18-50-49}}
 				- The username
@@ -201,7 +201,7 @@ public:: true
 				  A client can [avoid to include the PAC](((655f5e6d-8301-4c72-992f-da004b0b9bc5))) in the created AP-REQ.
 				  #+END_NOTE
 		- Once the application server receives the AP-REQ it process it and eventually grant access to user to the requested service.
-id:: 655b6438-6055-4038-b37b-457c7b623610
+		  id:: 655b6438-6055-4038-b37b-457c7b623610
 			- The application server decrypts the [TGS](((655b24f3-a272-4dc0-814f-e7b3a4edf632))) and reads the following information. *(Please remind that the TGS was encrypted by the KDC in a way that only the application server can read it.)*
 			  logseq.order-list-type:: number
 				- The username of the user who requests access
