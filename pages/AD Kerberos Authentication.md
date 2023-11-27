@@ -248,6 +248,14 @@ public:: true
 			  logseq.order-list-type:: number
 			- TODO asd
 			  logseq.order-list-type:: number
+				- This is optional and only used if the service wants to identify itself against the user
+				- id:: 655fb0f2-d109-45fd-bf94-28ce90974744
+				  #+BEGIN_PINNED
+				  The **AP-REP** *(Application Reply)* contains:
+				  #+END_PINNED
+					- TODO To research
+					  logseq.order-list-type:: number
+					  background-color:: pink
 - *Privilege Attribute Certificate* (PAC)
   id:: 655f3e21-772b-48c3-b6e6-bd342fb92403
 	- [PAC](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-apds/a00d0b83-97e3-44ad-ba2d-1221d4f51a35#gt_26456104-0afb-4afe-a92e-ac160a9efdf8) is a **[Microsoft-specific](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/166d8064-c863-41e1-9c23-edaaa5f36962)** authorization data structure present in the *authorization data* field of many tickets.
@@ -255,6 +263,7 @@ public:: true
 		  The **PAC** *(Privilege Attribute Certificate)* contains:
 		  #+END_PINNED
 			- The PAC **is encrypted with???**
+			  background-color:: pink
 			- Security identifiers (SIDs)
 			  logseq.order-list-type:: number
 			- Group memberships
