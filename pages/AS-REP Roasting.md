@@ -2,7 +2,7 @@ alias:: ASREPRoast
 public:: true
 
 - In case the [Kerberos Pre-Authentication](((655b158a-a666-41e0-8076-e59942a7bb20))) is not enabled for one or more domain users, an [AS-REQ](((655b1c01-e1e1-4be0-b245-ff8c9482df38))) can be forged without knowing their password (or the hash) and sent to KDC on their behalf.
-- Once the [AS-REP](((655b1795-7a37-4e7f-b428-6c9a34ab2cbf))) is returned from the domain controller, [the encrypted part of the response](((655a201b-448f-45dc-a8b7-2c8978dde0c2))) can be brute-forced offline to retrieve the user password.
+- Once the [AS-REP](((655b1795-7a37-4e7f-b428-6c9a34ab2cbf))) is returned from the domain controller, [the encrypted part of the response](1. ) can be brute-forced offline to retrieve the user password.
 - #+BEGIN_NOTE
   Please note that in order to execute most of the following commands you need be able to query the DC. Hence, you need access to a valid domain user.
   #+END_NOTE
