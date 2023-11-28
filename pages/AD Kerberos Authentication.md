@@ -2,15 +2,10 @@ public:: true
 
 - #+BEGIN_QUOTE
   [RFC4120](https://www.rfc-editor.org/rfc/rfc4120): The Kerberos Network Authentication Service (V5)
+  [[MS-KILE](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-kile/2a32282e-dd48-4ad9-a542-609804b02cc9)]: Kerberos Protocol Extensions *(Microsoft implementation of the Kerberos protocol extension which provides additional capability for authorization information including group memberships, interactive logon information, and integrity levels.)*
   #+END_QUOTE
-- A key difference between Kerberos and [[NTLM Authentication]] is that with the latter the client starts the authentication process with the application server itself. On the other hand, Kerberos client authentication involves the use of a domain controller in the role of a **Key Distribution Center ([KDC](https://en.wikipedia.org/wiki/Key_distribution_center))**. The client starts the authentication process with the KDC and not the application server.
+- A key difference between Kerberos and [[NTLM Authentication]] is that with the latter the client starts the authentication process with the application server itself. On the other hand, Kerberos client authentication involves the use of a domain controller in the role of a **[Key Distribution Center](((6565b3f7-61b6-4b2a-a59d-01d20e6acd96))) (KDC)**. The client starts the authentication process with the KDC and not the application server.
   id:: 655a4269-4fa1-4988-b577-ad77f90064c0
-- The *KDC* *(Key Distribution Center)* holds a database of the keys used in the authentication process and consists of two main parts:
-  id:: 655b6438-649a-4e31-9922-6decb3528b14
-	- The  *Authentication Server service* responsible for authenticating clients.
-	  logseq.order-list-type:: number
-	- The *Ticket Granting Service* that provides tickets to the client systems.
-	  logseq.order-list-type:: number
 - The *[Privilege Attribute Certificate](((655f3e21-772b-48c3-b6e6-bd342fb92403)))* (PAC) adds **authorization capabilities** to the Microsoft Kerberos implementation, which by itself does not provide authorization.
 - **Kerberos Workflow**
   id:: 655a4269-b8f7-4f0f-b437-f04b362912d9
@@ -147,7 +142,7 @@ public:: true
 					- The TGT must not have to be [expired](((655f6c2b-0127-41cd-b199-ed9eb7ea1869))). It is compared with the timestamp submitted in the TGS-REQ.
 					  id:: 655b6438-437b-48c4-98c3-c703c1703b4c
 					- The username from the TGS-REQ has to match the username from the TGT.
-			- If the validation process succeeded, then the KDC in the role of the *[ticket-granting service](((655b6438-649a-4e31-9922-6decb3528b14)))* replies with a *Ticket Granting Service Reply* (TGS-REP).
+			- If the validation process succeeded, then the KDC in the role of the *[ticket-granting service](The *KDC* *(Key Distribution Center)* holds a database of the keys used in the authentication process and consists of two main parts:)* replies with a *Ticket Granting Service Reply* (TGS-REP).
 			  logseq.order-list-type:: number
 			  id:: 655b6438-aa29-434b-bdf9-75e172e85fd1
 				- id:: 655b6438-ee0f-4168-8a40-754613d2b793

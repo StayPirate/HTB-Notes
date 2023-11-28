@@ -1,14 +1,19 @@
 public:: true
 
-- Active Directory (AD) is a database and set of services that connect users with the network resources they need to get their work done.
-	- The **Active Directory** database (directory) contains information about the AD objects in the domain. Common types of AD objects include:
-		- Users
-		- Groups
-		- Computers
-		- Applications
-		- Printers
-		- Shared Folders
-	- The **Domain Controller** is a server that provides all the services needed for managing activities occurring in your IT environment. In particular, it makes sure each person is who they claim to be (*authentication*) and allow them to access only the data they’re allowed to use (*authorization*).
+- The **[Domain Controller](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))** is a server that provides all the services needed for managing activities occurring in your IT environment. In particular, it makes sure each person is who they claim to be (*authentication*) and allow them to access only the data they’re allowed to use (*authorization*). There are several services running on it, like:
+	- The **AD** *([Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview))*, it is a database (directory) holding information about AD objects in the domain. Common types of AD objects include: User, Groups, Computers, Applications, Printers, Shared folders.
+	- The **KDC** *([Key Distribution Center](https://learn.microsoft.com/en-us/windows/win32/secauthn/key-distribution-center))* holds a database of the keys used in the authentication process and consists of two main parts:
+	  id:: 6565b3f7-61b6-4b2a-a59d-01d20e6acd96
+		- The  *Authentication Service* (AS) responsible for authenticating clients and issuing [TGT](((655b1bc6-5c5d-4c70-9d2b-f3f3d6458cb9)))s.
+		  logseq.order-list-type:: number
+		- The *Ticket Granting Service* (TGS) issues [tickets](((655a24c7-b91e-4a45-8468-c565395f566e))) for connection to computers in its own domain.
+		  logseq.order-list-type:: number
+	- According to [Microsoft](https://learn.microsoft.com/en-us/windows/win32/secauthn/key-distribution-center), KDC and AD are located on the domain controller. Both services are started automatically by the domain controller's *Local Security Authority* (LSA) and run as part of the LSA's process.
+		- collapsed:: true
+		  #+BEGIN_CENTER
+		  ![image.png](../assets/image_1701166201207_0.png)
+		  #+END_CENTER
+			- {{renderer excalidraw, excalidraw-2023-11-28-10-52-09}}
 - Service Principal Name ([SPN](https://learn.microsoft.com/en-us/windows/win32/ad/service-principal-names))
   id:: 655e0fad-5b48-42ce-b82a-09cd0e4a9322
 	- SPN is a concept from [[Kerberos]]. It's an identifier for a particular service offered by a particular host within an authentication domain.
