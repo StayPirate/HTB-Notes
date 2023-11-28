@@ -10,4 +10,3 @@
 - ![image.png](../assets/image_1700952560472_0.png)
   collapsed:: true
 	- {{renderer excalidraw, excalidraw-2023-11-25-23-47-55}}
--

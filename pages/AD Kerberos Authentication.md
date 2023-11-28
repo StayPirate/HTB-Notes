@@ -39,8 +39,11 @@ public:: true
 				- The timestamp, **encrypted with the user's (NTLM hash) password**
 				  logseq.order-list-type:: number
 				  id:: 655b158a-a666-41e0-8076-e59942a7bb20
-					- This is known as [*Kerberos Pre-Authentication*](https://social.technet.microsoft.com/wiki/contents/articles/23559.kerberos-pre-authentication-why-it-should-not-be-disabled.aspx) and prevents offline password guessing. It is enforced by default, but can be manually disabled for specific accounts by explicitly setting [`DONT_REQ_PREAUTH`](https://learn.microsoft.com/en-US/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties). See the [[ASREPRoast]] attack.
+					- This is known as [*Kerberos Pre-Authentication*](https://social.technet.microsoft.com/wiki/contents/articles/23559.kerberos-pre-authentication-why-it-should-not-be-disabled.aspx) (or `PA-ENC-TIMESTAMP`) and prevents offline password guessing. It is enforced by default, but can be manually disabled for specific accounts by explicitly setting [`DONT_REQ_PREAUTH`](https://learn.microsoft.com/en-US/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties). See the [[ASREPRoast]] attack.
 					  id:: 655cc72a-f6bf-40d2-bba0-8384e40186b9
+					- #+BEGIN_NOTE
+					  According to [[RFC6113](https://datatracker.ietf.org/doc/html/rfc6113#section-2.2)] Windows clients always send an initial **non pre-authenticated** AS-REQ request because the client wouldn't know the list of supported ETYPES. But, since pre-authentication is required by default the KDC server will likely respond with an error *(including acceptable pre-authentication methods)* and closes the connection. The client then has to send another request with an encrypted timestamp value.
+					  #+END_NOTE
 				- The username
 				  logseq.order-list-type:: number
 				- The service [SPN](((655e0fad-5b48-42ce-b82a-09cd0e4a9322))) associated with *krbtgt* account
@@ -265,7 +268,7 @@ public:: true
 				- Typically, this PAC credentials element is used when a public key form of authentication, such as that specified in PKINIT [RFC4556](https://go.microsoft.com/fwlink/?LinkId=90482), is used to establish the Kerberos authentication.
 			- Checksums
 			  logseq.order-list-type:: number
-				- [Server checksum](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/a194aa34-81bd-46a0-a931-2e05b87d1098), [KDC checksum](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/3122bf00-ea87-4c3f-92a0-91c0a99f5eec), [Ticket checksum](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/76c10ef5-de76-44bf-b208-0d8750fc2edd), [FullPAC Checksum](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/november-2022-out-of-band-update-released-take-action/ba-p/3680144)
+				- [Server checksum](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/a194aa34-81bd-46a0-a931-2e05b87d1098), [KDC checksum](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/3122bf00-ea87-4c3f-92a0-91c0a99f5eec) (used in [Step 5.1 and 5.2](((655f615a-5051-4943-9791-934b3b6173bb)))), [Ticket checksum](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/76c10ef5-de76-44bf-b208-0d8750fc2edd), [FullPAC Checksum](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/november-2022-out-of-band-update-released-take-action/ba-p/3680144)
 			- PAC Attributes
 			  logseq.order-list-type:: number
 	- PAC validation is an optional process between the server application and the domain controller. If enabled, when the user request access to a domain service his privileges **are validated by the domain controller**.
@@ -280,5 +283,5 @@ public:: true
 			  logseq.order-list-type:: number
 			- It is enabled if the entry does not exist.
 			  logseq.order-list-type:: number
-		- The application has the `SeTcbPrivilege` privilege (“Act as part of the operating system”). This is true for all the Windows service accounts (Local system, network service and local service).
+		- The application has the `SeTcbPrivilege` privilege *(Act as part of the operating system)*. This is true for all the Windows service accounts (Local system, network service and local service).
 		- The application is a service and the `ValidateKdcPacSignature` registry key is set to disable PAC validation (default settings)

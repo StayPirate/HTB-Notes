@@ -14,22 +14,27 @@ public:: true
 		  ![image.png](../assets/image_1701166201207_0.png)
 		  #+END_CENTER
 			- {{renderer excalidraw, excalidraw-2023-11-28-10-52-09}}
-- Service Principal Name ([SPN](https://learn.microsoft.com/en-us/windows/win32/ad/service-principal-names))
-  id:: 655e0fad-5b48-42ce-b82a-09cd0e4a9322
-	- SPN is a concept from [[Kerberos]]. It's an identifier for a particular service offered by a particular host within an authentication domain.
-	- It's assigned to application instance when they are registered in the Active Directory ("Kerberized" service). This also allows for easy management for administrators and gets a better integration with other AD objects and services.
-	- [[Kerberos]] uses SPNs to associate a service instance with a service account, usually the AD computer account.
-		- If a SPN is associated to an **AD user account**, then the [[Kerberoasting]] attack can be execute attempting to retrieve the user's password.
-		- For computer accounts, [managed service accounts](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/managed-service-accounts-understanding-implementing-best/ba-p/397009), and [group-managed service accounts](https://learn.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) the password is randomly generated, complex, and 120 characters long, **making cracking infeasible**.
-		  id:: 655e3185-f921-4b07-bb00-e397a2486fc6
-	- The SPN consists of a string on the form of: `service class`/`fqdn`@`REALM`.
-		- The `service class` can loosely be thought of as the protocol for the service.
-			- The list of service classes that are built-in to Windows are [listed here](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc772815(v=ws.10)?redirectedfrom=MSDN#service-principal-names).
-		- The `fqdn` is the *fully qualified domain name* of the computer hosting the service.
-		- `REALM` is a Kerberos term to refer what in AD is called *domain*
-		- Example: `IMAP/mail.example.com@EXAMPLE.COM`
-- User Principal Name (UPN)
-	- Similar to the SPN but for user objects
+- Principal Names
+	- In [[Kerberos]], a principal name is a unique identifier for a network entity, such as a *user* or *service*, that participates in Kerberos authentication and authorization.
+	- Service Principal Name ([SPN](https://learn.microsoft.com/en-us/windows/win32/ad/service-principal-names) or *sname*)
+	  id:: 655e0fad-5b48-42ce-b82a-09cd0e4a9322
+		- Identifies a particular service offered by a particular host within a domain and it's assigned to application instances when they are registered in the Active Directory *(Kerberized services)*.
+		- The *SPN identity* is a domain user account that has been mapped to the SPN. This mapping allows the KDC to identify which Kerberos keys should be used in the communication.
+			- If a SPN is associated to a **domain user account**, then the [[Kerberoasting]] attack can be execute attempting to retrieve the user's password.
+			- For computer accounts, [managed service accounts](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/managed-service-accounts-understanding-implementing-best/ba-p/397009), and [group-managed service accounts](https://learn.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) the password is randomly generated, complex, and 120 characters long, **making cracking infeasible**.
+			  id:: 655e3185-f921-4b07-bb00-e397a2486fc6
+		- The SPN consists of a string on the form of: `service class`/`fqdn`@`REALM`.
+			- The `service class` can loosely be thought of as the protocol for the service.
+				- The list of service classes that are built-in to Windows are [listed here](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc772815(v=ws.10)?redirectedfrom=MSDN#service-principal-names).
+			- The `fqdn` is the *[fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)* of the computer hosting the service.
+			- `REALM` is a Kerberos term to refer what in AD-world is called *domain*
+			- Examples:
+				- IMAP/mail.example.com@EXAMPLE.COM
+				- HTTP/web.hpbank.local
+				- MSSQLSvc/MSSQL01.hpbank.local
+				- CIFS/DC01.hpbank.local
+	- User Principal Name (UPN or *cname*)
+		- Similar to the SPN but for user objects
 - Find the Primary Domain Controller
 	- Within a domain there might be multiple DCs. In  that case the *domain name* could potentially resolve to the IP address of any of them.
 	  
