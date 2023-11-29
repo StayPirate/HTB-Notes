@@ -53,8 +53,19 @@ public:: true
 			  logseq.order-list-type:: number
 	- [[Kerbrute]]
 	  logseq.order-list-type:: number
-		- {{embed ((655cbd1e-9c3e-4f5c-af2e-247535fac289))}}
+	  id:: 6564d528-89dd-4b10-95af-7f4c863afa06
+		- #+BEGIN_NOTE
+		  The main advantage is that it **only uses two UDP frames** to determine whether the password is valid as it only sends an [AS_REQ](((655b1c01-e1e1-4be0-b245-ff8c9482df38))) and examines the response, making it the faster online brute-force technique.
+		  
+		  It's also *kinda stealthier* than other methods since **pre-authentication failures do not trigger** "*An account failed to log on*" (event [4625](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4625)). However, the [KDC](((655a4269-4fa1-4988-b577-ad77f90064c0))) will log every failed pre-authentication attempt (event [4768](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4768)) by increasing the *badpwdcount* attribute for any incorrect `PA-ENC-TIMESTAMP` attempts.
+		  
+		  A lot of 4768 events for different users may **point to a user enumeration attack** attempt.
+		  #+END_NOTE
 		- Iterate through a list of users and file [AS-REQ](((655b1c01-e1e1-4be0-b245-ff8c9482df38)))s to the domain controller using a fixed password.
 		  ```bash
 		  kerbrute_linux_amd64 passwordspray -d corp.com .\usernames.txt "Nexus123!"
 		  ```
+		- TODO check if the following hypothesis is correct
+		  background-color:: pink
+			- We know that for retro-compatibility all AS-REQ are [first tried without pre-authentication](((655b158a-a666-41e0-8076-e59942a7bb20))). Wouldn't all these legit requests pollute the event logs?
+			  Of course, in case of enumeration or password spray there would be many 4768 events within a small timeframe, therefore it won't be trivial to tune a detection rule for such scenarios. But how that would perform in a highly dense AD?

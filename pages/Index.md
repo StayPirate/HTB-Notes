@@ -19,22 +19,28 @@ public:: true
 			- Manual
 				- [Legacy Windows Tools]([[Manual AD Enumeration via Legacy Windows Tools]])
 				- [PowerView]([[Manual AD Enumeration via PowerView]])
+			- Brute Force
+				- [Users]([[Kerberos User Enumeration]])
 		- [Authentication]([[Active Directory Authentication]])
 			- [[NTLM Authentication]]
 			- [Kerberos]([[AD Kerberos Authentication]])
 			- [[RC4-HMAC]]
-			- x509 Certificate
+			- [[PKINIT]]
 			- [[Cached AD Credentials]]
 			- Attack AD Authentication
 				- [Password Attacks]([[AD Authentication Password Attack]])
+				- [[AS-REQ Roasting]]
 				- [[AS-REP Roasting]]
 				- [[Kerberoasting]]
 					- [Targeted Kerberoasting](logseq://graph/HTB-Notes?block-id=655e327e-5e4b-4260-828e-33941dad976c)
 					  id:: 655e33c3-0c50-48d0-88d8-1c03abf25caa
 				- [[Silver Tickets]]
 				- Domain Controller Synchronization
+				- [[RC4 AS-REP Decryption]]
 		- Lateral Movement
 			- [Tips]([[AD Lateral Movement Tips]])
+		- Security Enforcement
+			- [[Protected Users Security Group]]
 	- Awesome tools and where to find them
 		- Network
 			- [[Ligolo-ng]]
@@ -48,6 +54,8 @@ public:: true
 				- [GetNPUsers]([[Impacket GetNPUsers]])
 				- [GetUserSPNs]([[Impacket_GetUserSPNs]])
 			- [[Rubeus]]
+			- [[Patator]]
+			- [Kerberoast]([[Kerberoast tool]])
 		- Cracking
 			- [[Hashcat]]
 			- [[John The Ripper]]

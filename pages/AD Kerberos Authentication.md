@@ -25,6 +25,7 @@ public:: true
 		- Kerberos application server request - **AP_REQ**
 		- Kerberos application server response - **AP_REP** *(optional)*
 	- **Step 1**
+	  id:: 6564d528-ff73-410b-a538-c3dbcd9d039e
 		- When a user logs in to their workstation, an *Authentication Server Request* (AS-REQ) is sent to the domain controller.
 		  id:: 655a1af9-9f7f-4089-8392-e6d816267e35
 			- id:: 655b1c01-e1e1-4be0-b245-ff8c9482df38
@@ -54,6 +55,7 @@ public:: true
 				  logseq.order-list-type:: number
 				  id:: 656471a5-2bc9-4da9-81ff-906bd9ae41aa
 	- **Step 2**
+	  id:: 6564d528-4967-4c86-82aa-9168c47ab29c
 		- Once the KDC has received the AS-REQ it performs some checks and eventually reply with a AS-REP.
 			- If pre-authentication is enable for the requesting user
 			  logseq.order-list-type:: number

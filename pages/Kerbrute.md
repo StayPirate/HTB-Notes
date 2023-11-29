@@ -9,13 +9,7 @@ public:: true
   
   Version: dev (bc1d606) - 11/15/20 - Ronnie Flathers @ropnop
   ```
-- Quickly bruteforce and enumerate valid Active Directory accounts through Kerberos Pre-Authentication.
-- id:: 655cbd1e-9c3e-4f5c-af2e-247535fac289
-  #+BEGIN_NOTE
-  The main advantage is that it **only uses two UDP frames** to determine whether the password is valid as it sends only an AS-REQ and examines the response, making it the faster online brute-force technique.
-  
-  It's also *kinda stealthier* than other methods since **pre-authentication failures do not trigger** "*An account failed to log on*" event 4625. However, the [KDC](((655a4269-4fa1-4988-b577-ad77f90064c0))) will log every [failed pre-authentication attempt](https://social.technet.microsoft.com/wiki/contents/articles/23559.kerberos-pre-authentication-why-it-should-not-be-disabled.aspx) by increasing the *badpwdcount* attribute for any incorrect `PA-ENC-TIMESTAMP` attempts.
-  #+END_NOTE
+  Quickly bruteforce and enumerate valid Active Directory accounts through Kerberos Pre-Authentication.
 - Official [repository](https://github.com/ropnop/kerbrute)
 - Download binaries 💾 from official [releases](https://github.com/ropnop/kerbrute/releases)
 - It's written in Go so it can be run from both Windows and **Linux**
@@ -69,3 +63,8 @@ public:: true
 	  
 	  Use "kerbrute [command] --help" for more information about a command.
 	  ```
+- User Enumeration
+	- {{embed ((65671fc8-7211-4f80-88d5-27744b4ab82a))}}
+	- {{embed ((6567218f-2f3a-4c8f-bdd1-ca629d69f2c1))}}
+- Password Spray
+	- {{embed ((6564d528-89dd-4b10-95af-7f4c863afa06))}}

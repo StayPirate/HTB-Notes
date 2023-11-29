@@ -1,0 +1,2 @@
+- Official [repository](https://github.com/lanjelot/patator)
+- Kali [docs](https://www.kali.org/tools/patator/)

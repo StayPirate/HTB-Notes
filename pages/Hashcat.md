@@ -7,5 +7,6 @@ public:: true
 - Pre-intalled in [Kali](https://www.kali.org/tools/hashcat/): `/usr/bin/hashcat`
 - Crack [[ASREPRoast]] hashes
   {{embed ((655cd6cd-968a-4756-b77f-35c47110ad33))}}
+- {{embed ((6567302f-bb7b-413d-bf84-4ac00b10e784))}}
 - Crack [[Kerberoasting]] hashes
   {{embed ((655e2b6a-bc1a-494a-86e2-c23880ba612c))}}
