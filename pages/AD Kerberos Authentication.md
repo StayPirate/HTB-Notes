@@ -215,16 +215,11 @@ public:: true
 					- The *[PAC](((655f3e21-772b-48c3-b6e6-bd342fb92403)))*.
 				- The application server uses these information to check if the request is legit
 				  logseq.order-list-type:: number
+				  id:: 6564d528-3620-4298-b8cb-5cf13fbd6ff3
 					- It check if the TGS is not expired.
 					- It checks if the username provided by the client in the AP-REQ matches the one in the TGS.
 					- It inspects the supplied group memberships and assigns appropriate permissions to the user.
-						- *(Can the user access the resource he's requesting?)*
-					- id:: 655b6438-5c8b-457f-a027-dffc35de2193
-					  #+BEGIN_CAUTION
-					  Fun fact, in the majority of environments user and group permissions **are not verified** by the application.
-					  
-					  Most applications **blindly trust** the integrity of the TGS since it is encrypted with a password hash that is, in theory, only known to the [service account and the domain controller](((655a24c7-b91e-4a45-8468-c565395f566e))).
-					  #+END_CAUTION
+					  *(Can the user access the resource he's requesting?)*
 					- If [PAC validation is enabled](((655f4e98-766b-46fd-94f0-c385b24b5160))), the application server contacts the KDC to validate the signature of the received PAC.
 					  id:: 655f615a-5051-4943-9791-934b3b6173bb
 						- collapsed:: true
@@ -237,8 +232,14 @@ public:: true
 						- **Step 5.2**
 							- The KDC return the result of the signature verification process (RPC status code).
 					- #+BEGIN_TIP
-					  If the application server **doesn't check group permissions** and **PAC validation is disabled**, attackers can attempt the [[Silver Tickets]] attack.
+					  If the application server **doesn't perform PAC validation**, then an attacker can attempt the [[Silver Tickets]] attack.
 					  #+END_TIP
+					- id:: 656894a3-41d7-4b62-b202-c967caa53483
+					  #+BEGIN_CAUTION
+					  Fun fact, in the majority of environments user and group permissions **are not verified** by the application.
+					  
+					  Most applications **blindly trust** the integrity of the TGS since it is encrypted with a password hash that is, in theory, only known to the [service account and the domain controller](((655a24c7-b91e-4a45-8468-c565395f566e))).
+					  #+END_CAUTION
 				- If everything went right, access to the service is granted.
 				  logseq.order-list-type:: number
 	- **Step 6** *(optional)*
@@ -247,7 +248,8 @@ public:: true
   id:: 655f3e21-772b-48c3-b6e6-bd342fb92403
 	- Since Kerberos **does not provide authorization** (*kerberized* applications are expected to
 	  manage their own authorization), the *Privilege Attribute Certificate* was created by Microsoft to provide such via *Kerberos Protocol Extensions*. PAC is a **Microsoft-specific authorization data structure** present in the *authorization data* field of many tickets.
-		- #+BEGIN_PINNED
+		- id:: 6564d528-627a-4b9b-b5b3-e57ff5477619
+		  #+BEGIN_PINNED
 		  The **PAC** *(Privilege Attribute Certificate)* contains:
 		  #+END_PINNED
 			- This is a simplification of the real [PAC structure](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/166d8064-c863-41e1-9c23-edaaa5f36962)
@@ -287,3 +289,16 @@ public:: true
 			  logseq.order-list-type:: number
 		- The application has the `SeTcbPrivilege` privilege *(Act as part of the operating system)*. This is true for all the Windows service accounts (Local system, network service and local service).
 		- The application is a service and the `ValidateKdcPacSignature` registry key is set to disable PAC validation (default settings)
+- Renewable Tickets
+  id:: 65686104-d39c-4820-9752-9963fae90657
+	- #+BEGIN_CAUTION
+	  Applications may require tickets that remain valid for extended periods. However, this presents a security risk as the credentials can be susceptible to theft during the entire duration, and the stolen credentials would remain valid until the ticket expires.
+	  
+	  Using short-lived tickets and renewing them frequently requires the client to have access to its secret key for an extended period, which is also risky.
+	  #+END_CAUTION
+	- To address this issue, renewable tickets can be employed. These tickets have **two expiration times**:
+		- `endtime` in *TGT*, or `till` in *AS-REQ*
+			- Defines when the current ticket expires, after that a renewal request can be filed.
+		- `renew-till` in *TGT*, or `rtime` in *AS-REQ*
+			- Defines the maximum allowed expiration time for an individual ticket. It can be thought of as *the absolute expiration time* for the ticket, including all renewals.
+	- To renew the ticket, the application client must present the renewable ticket to the KDC periodically (i.e., before it expires), specifying the RENEW option in the KDC request (TGS-REQ). The KDC then issues a new ticket with a **new session key** and a **later expiration time**, leaving all other ticket fields unaltered (TGS-REP).

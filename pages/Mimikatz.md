@@ -19,7 +19,7 @@ public:: true
 	  Due to the mainstream popularity of Mimikatz and well-known detection signatures, consider avoiding using it as a standalone application and use antivirus evasion techniques instead.
 	  #+END_IMPORTANT
 		- Execute Mimikatz directly from memory using an [injector](https://github.com/PowerShellMafia/PowerSploit/blob/master/CodeExecution/Invoke-ReflectivePEInjection.ps1) like PowerShell.
-		- Use other tools [to dump](https://www.whiteoaksecurity.com/blog/attacks-defenses-dumping-lsass-no-mimikatz/) the entire LSASS process memory.
+		- Use other tools [to dump](https://www.whiteoaksecurity.com/blog/attacks-defenses-dumping-lsass-no-mimikatz/) the entire LSASS process memory and process them with Mimikatz offline.
 			- Built-in Task Manager (GUI)
 			  logseq.order-list-type:: number
 			- [Procdump](https://learn.microsoft.com/en-us/sysinternals/downloads/procdump)
@@ -30,7 +30,7 @@ public:: true
 			  logseq.order-list-type:: number
 			- Then process the dump in a secure machine
 				- From a trusted Windows machine with Mimikatz
-				  ```cmd
+				  ```
 				  sekurlsa::minidump lsass.DMP
 				  log lsass.txt
 				  sekurlsa::logonPasswords
@@ -46,22 +46,13 @@ public:: true
 	- SYSTEM account. In this case `debug` privilege is not needed.
 	  logseq.order-list-type:: number
 - Plain-text password in Mimikatz output
-	- Sometimes Mimikatz returns plain-text passwords instead of their hashes, this is because [WDigest](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc778868(v=ws.10)?redirectedfrom=MSDN) is enabled.
+	- Sometimes Mimikatz returns plain-text passwords instead of their hashes, this is because [[WDigest]] is enabled.
 	- That's the case of older operating systems like Windows 7, or operating systems where Wdigest has been manually enabled.
 - Abusing TGT and service tickets
-	- A different approach and use of Mimikatz is to exploit Kerberos authentication by abusing [*TGT*](((655a1fb1-47f5-446a-8813-e1a809f05a7b))) and [*service tickets*](((655b6438-ee0f-4168-8a40-754613d2b793))). As [mentioned here](), *TGT* and *service tickets* for users currently logged on to the local machine are stored for future use. These tickets are also stored in LSASS, and we can use Mimikatz to interact with and retrieve our own tickets as well as the tickets of other local users.
-		- id:: 655b726e-0d43-4563-8113-26fa050e7731
-		  #+BEGIN_CAUTION
-		  Stealing a [**TGS**](((655b6438-aa29-434b-bdf9-75e172e85fd1))) would allow us to access only particular resources associated with those tickets.
-		  #+END_CAUTION
-		- id:: 655b7297-4e11-496a-be73-935b85edd3bb
-		  #+BEGIN_CAUTION
-		  Stealing a [**TGT**](((655a4269-a509-429f-95ea-ce8b6582cf9c))) would allow us to  request a TGS for specific resources we want to target within the domain. It can use to forge arbitrary TGS.
-		  #+END_CAUTION
 	- To dump tickets from LSASS process memory we can use the [`sekurlsa::tickets`](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa#tickets) command.
-	  ```
-	  sekurlsa::tickets
-	  ```
+	  {{embed ((65686a95-2f8d-4c16-ba29-4ec6ce616cb4))}}
+	- Forge [[Silver Tickets]] 
+	  {{embed ((6568a340-887a-4e0e-9515-0344e4728aaa))}}
 - Certificates
   id:: 655b7624-0ef9-481b-96a1-2aa762c3f0dd
 	- Certificates' private keys are also stored in the LSASS process' memory. As [mentioned here](((655b76db-6fdf-470e-9bea-1d662dcfd6c1))), certificates may be marked as having a non-exportable private key.

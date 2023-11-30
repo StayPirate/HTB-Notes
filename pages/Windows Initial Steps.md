@@ -28,10 +28,12 @@ Tags:: powershell, windows,grep
   ```
 - #### Check who's part of the local administrators group
   logseq.order-list-type:: number
-  
   ```powershell
   net localgroup administrators
   ```
+- Get a list of domain user accounts with associated SPNs ([[Kerberoasting]])
+  logseq.order-list-type:: number
+  {{embed ((65684a10-0764-4ca6-ad8e-1053e99ded78))}}
 - #### Hunt for any non-standard folders and files
   logseq.order-list-type:: number
 	- Search in `C:\`

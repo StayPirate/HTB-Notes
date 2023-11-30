@@ -35,6 +35,14 @@ public:: true
 				- CIFS/DC01.hpbank.local
 	- User Principal Name (UPN or *cname*)
 		- Similar to the SPN but for user objects
+- Computer accounts
+	- Password
+	  id:: 6568a1fb-58d3-4402-bbb5-8c3d1bca729e
+	  *(the following information are the default ones, then each environment can override them)*
+		- Auto-generated
+		- Complexity: High
+		- Lenght: 120
+		- Rotation period: 30 days
 - Find the Primary Domain Controller
 	- Within a domain there might be multiple DCs. In  that case the *domain name* could potentially resolve to the IP address of any of them.
 	  

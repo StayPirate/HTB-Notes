@@ -21,26 +21,35 @@ public:: true
 				- [PowerView]([[Manual AD Enumeration via PowerView]])
 			- Brute Force
 				- [Users]([[Kerberos User Enumeration]])
-		- [Authentication]([[Active Directory Authentication]])
-			- [[NTLM Authentication]]
-			- [Kerberos]([[AD Kerberos Authentication]])
-			- [[RC4-HMAC]]
-			- [[PKINIT]]
-			- [[Cached AD Credentials]]
-			- Attack AD Authentication
-				- [Password Attacks]([[AD Authentication Password Attack]])
-				- [[AS-REQ Roasting]]
-				- [[AS-REP Roasting]]
-				- [[Kerberoasting]]
-					- [Targeted Kerberoasting](logseq://graph/HTB-Notes?block-id=655e327e-5e4b-4260-828e-33941dad976c)
-					  id:: 655e33c3-0c50-48d0-88d8-1c03abf25caa
-				- [[Silver Tickets]]
-				- Domain Controller Synchronization
-				- [[RC4 AS-REP Decryption]]
 		- Lateral Movement
 			- [Tips]([[AD Lateral Movement Tips]])
 		- Security Enforcement
 			- [[Protected Users Security Group]]
+		- Authentication
+			- [[NTLM Authentication]]
+			- [Kerberos]([[AD Kerberos Authentication]])
+				- [[PKINIT]] (move this in [[Kerberos]])
+				  background-color:: yellow
+			- [[WDigest]]
+			  background-color:: yellow
+			- Supplement
+				- [[RC4-HMAC]]
+				  background-color:: yellow
+		- [Attacks]([[Attack AD Authentication]])
+			- [Password]([[AD Authentication Password Attack]])
+			- [[Cached AD Credentials]]
+			- [[AS-REQ Roasting]]
+			- [[AS-REP Roasting]]
+			- [[Kerberoasting]]
+				- [Targeted Kerberoasting](logseq://graph/HTB-Notes?block-id=655e327e-5e4b-4260-828e-33941dad976c)
+				  id:: 655e33c3-0c50-48d0-88d8-1c03abf25caa
+			- Pass-The-Hash
+			- [[Pass-The-Ticket]]
+			- [[Overpass-The-Hash]]
+			- [[Silver Tickets]]
+			- [[DCSync]]
+			- [[RC4 AS-REP Decryption]]
+			  background-color:: yellow
 	- Awesome tools and where to find them
 		- Network
 			- [[Ligolo-ng]]
@@ -49,13 +58,16 @@ public:: true
 		- Windows
 			- [[Mimikatz]]
 			- [[CrackMapExec]]
+			  background-color:: yellow
 			- [[Kerbrute]]
 			- [[Impacket]]
 				- [GetNPUsers]([[Impacket GetNPUsers]])
 				- [GetUserSPNs]([[Impacket_GetUserSPNs]])
 			- [[Rubeus]]
 			- [[Patator]]
+			  background-color:: yellow
 			- [Kerberoast]([[Kerberoast tool]])
+			  background-color:: yellow
 		- Cracking
 			- [[Hashcat]]
 			- [[John The Ripper]]
