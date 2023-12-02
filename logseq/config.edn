@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["Hack The Box" "HTB Notes"]
+ :favorites ["Hack The Box"]
 
  ;; Set flashcards interval.
  ;; Expected value:
@@ -308,7 +308,8 @@
  ;; Hide specific block properties.
  ;; Example usage:
  ;; :block-hidden-properties #{:public :icon}
-
+ :block-hidden-properties #{:public}
+ 
  ;; Create a page for all properties.
  ;; Default value: true
  :property-pages/enabled? true
