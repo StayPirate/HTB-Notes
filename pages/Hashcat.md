@@ -10,3 +10,5 @@ public:: true
 - {{embed ((6567302f-bb7b-413d-bf84-4ac00b10e784))}}
 - Crack [[Kerberoasting]] hashes
   {{embed ((655e2b6a-bc1a-494a-86e2-c23880ba612c))}}
+- [[DCSync]]
+  {{embed ((65a00895-d0d1-4168-9b92-6dfa7401d3d7))}}

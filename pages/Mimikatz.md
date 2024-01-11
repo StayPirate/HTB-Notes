@@ -52,7 +52,9 @@ public:: true
 	- To dump tickets from LSASS process memory we can use the [`sekurlsa::tickets`](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa#tickets) command.
 	  {{embed ((65686a95-2f8d-4c16-ba29-4ec6ce616cb4))}}
 	- Forge [[Silver Tickets]] 
-	  {{embed ((6568a340-887a-4e0e-9515-0344e4728aaa))}}
+	  {{embed ((656a21e7-a8f6-4b59-9b30-521a3268a8f0))}}
+- DCSync attack
+	- {{embed ((65a004e9-a008-4ad6-926f-fa50ba4608f6))}}
 - Certificates
   id:: 655b7624-0ef9-481b-96a1-2aa762c3f0dd
 	- Certificates' private keys are also stored in the LSASS process' memory. As [mentioned here](((655b76db-6fdf-470e-9bea-1d662dcfd6c1))), certificates may be marked as having a non-exportable private key.

