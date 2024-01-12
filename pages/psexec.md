@@ -7,7 +7,7 @@ public:: true
   
   With sysinternal PsExec and Impacket PsExec.py, port 135/tcp is only required for extended functionality.
   
-  Buuuut, [Pentera]([https://pentera.io/blog/135-is-the-new-445/](https://pentera.io/resources/research/135-is-the-new-445-psexec-over-remote-procedure-calls-by-pentera-labs/)) developed a new version of PsExec which **only uses port 135/tcp**, making the attack more stealthy and versatile. 
+  Buuuut, [Pentera](https://pentera.io/blog/135-is-the-new-445/) developed a new version of PsExec which **only uses port 135/tcp**, making the attack more stealthy and versatile.
   #+END_IMPORTANT
 	- TODO find the tool from Pentera and test it!
 	  background-color:: pink
