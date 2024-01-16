@@ -9,6 +9,7 @@ public:: true
 		- The *Ticket Granting Service* (TGS) issues [tickets](((655a24c7-b91e-4a45-8468-c565395f566e))) for connection to computers in its own domain.
 		  logseq.order-list-type:: number
 	- According to [Microsoft](https://learn.microsoft.com/en-us/windows/win32/secauthn/key-distribution-center), KDC and AD are located on the domain controller. Both services are started automatically by the domain controller's *Local Security Authority* (LSA) and run as part of the LSA's process.
+	  id:: 65663778-526d-48d4-a36d-3177ea335c2a
 		- collapsed:: true
 		  #+BEGIN_CENTER
 		  ![image.png](../assets/image_1701166201207_0.png)

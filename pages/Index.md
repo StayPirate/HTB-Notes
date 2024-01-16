@@ -26,10 +26,13 @@ public:: true
 			- [[WMI]]
 			- [[WinRM]]
 			- [[PsExec]]
-			- Pass-The-Hash
+			- [[Pass-The-Hash]]
 			- [[Overpass-The-Hash]]
 			- [[Pass-The-Ticket]]
-			- DCOM
+			- [[DCOM]]
+		- Persistence
+			- Golden Ticket
+			- Shadow Copies
 		- Security Enforcement
 			- [[Protected Users Security Group]]
 		- Authentication

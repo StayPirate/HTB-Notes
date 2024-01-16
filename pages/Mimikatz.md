@@ -46,6 +46,7 @@ public:: true
 	- SYSTEM account. In this case `debug` privilege is not needed.
 	  logseq.order-list-type:: number
 - Plain-text password in Mimikatz output
+  id:: 65663778-7eae-4a4d-a668-3bb7eff7d34d
 	- Sometimes Mimikatz returns plain-text passwords instead of their hashes, this is because [[WDigest]] is enabled.
 	- That's the case of older operating systems like Windows 7, or operating systems where Wdigest has been manually enabled.
 - Abusing TGT and service tickets
@@ -55,6 +56,8 @@ public:: true
 	  {{embed ((656a21e7-a8f6-4b59-9b30-521a3268a8f0))}}
 - DCSync attack
 	- {{embed ((65a004e9-a008-4ad6-926f-fa50ba4608f6))}}
+- Overpass-The-Hash (upgraded a cached NTLM password hash to a Kerberos TGT to gain remote code execution)
+	- {{embed ((65a69974-9c42-41df-909e-67d73e121db1))}}
 - Certificates
   id:: 655b7624-0ef9-481b-96a1-2aa762c3f0dd
 	- Certificates' private keys are also stored in the LSASS process' memory. As [mentioned here](((655b76db-6fdf-470e-9bea-1d662dcfd6c1))), certificates may be marked as having a non-exportable private key.
