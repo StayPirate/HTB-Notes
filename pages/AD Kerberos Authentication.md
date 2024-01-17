@@ -1,4 +1,5 @@
 public:: true
+alias:: Kerberos
 
 - #+BEGIN_QUOTE
   [RFC4120](https://www.rfc-editor.org/rfc/rfc4120): The Kerberos Network Authentication Service (V5)

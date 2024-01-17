@@ -14,6 +14,7 @@ public:: true
 - Official [repository](https://github.com/gentilkiwi/mimikatz).
 - Official [wiki](https://github.com/gentilkiwi/mimikatz/wiki), additional [docs](https://adsecurity.org/?page_id=1821).
 - Download binaries 💾 from official [releases](https://github.com/gentilkiwi/mimikatz/releases), also maintained in [Kali](https://www.kali.org/tools/mimikatz/) at `/usr/share/windows-resources/mimikatz/`.
+- [Kiwi](https://docs.metasploit.com/api/Rex/Post/Meterpreter/Extensions/Kiwi/Kiwi.html) is a Mimikatz port for [Meterpreter](https://docs.metasploit.com/docs/using-metasploit/advanced/meterpreter/meterpreter.html)
 - Evade detection
 	- #+BEGIN_IMPORTANT
 	  Due to the mainstream popularity of Mimikatz and well-known detection signatures, consider avoiding using it as a standalone application and use antivirus evasion techniques instead.
@@ -58,6 +59,8 @@ public:: true
 	- {{embed ((65a004e9-a008-4ad6-926f-fa50ba4608f6))}}
 - Overpass-The-Hash (upgraded a cached NTLM password hash to a Kerberos TGT to gain remote code execution)
 	- {{embed ((65a69974-9c42-41df-909e-67d73e121db1))}}
+- Golden Ticket
+	- {{embed ((65a7d51a-e45d-454a-b4fd-7f314589d634))}}
 - Certificates
   id:: 655b7624-0ef9-481b-96a1-2aa762c3f0dd
 	- Certificates' private keys are also stored in the LSASS process' memory. As [mentioned here](((655b76db-6fdf-470e-9bea-1d662dcfd6c1))), certificates may be marked as having a non-exportable private key.

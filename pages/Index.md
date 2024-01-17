@@ -15,6 +15,7 @@ public:: true
 		- [Windows]([[Windows Reverse Shells]])
 		- [Linux]([[Linux Reverse Shells]])
 	- [[Active Directory]]
+	  background-color:: pink
 		- Enumeration
 			- Manual
 				- [Legacy Windows Tools]([[Manual AD Enumeration via Legacy Windows Tools]])
@@ -30,8 +31,8 @@ public:: true
 			- [[Overpass-The-Hash]]
 			- [[Pass-The-Ticket]]
 			- [[DCOM]]
-		- Persistence
-			- Golden Ticket
+		- [Persistence]([[AD Persistence]])
+			- [[Golden Ticket]]
 			- Shadow Copies
 		- Security Enforcement
 			- [[Protected Users Security Group]]
@@ -54,6 +55,7 @@ public:: true
 				- [Targeted Kerberoasting](logseq://graph/HTB-Notes?block-id=655e327e-5e4b-4260-828e-33941dad976c)
 				  id:: 655e33c3-0c50-48d0-88d8-1c03abf25caa
 			- [[Silver Tickets]]
+			- [[Golden Ticket]]
 			- [[DCSync]]
 			- [[RC4 AS-REP Decryption]]
 			  background-color:: yellow
