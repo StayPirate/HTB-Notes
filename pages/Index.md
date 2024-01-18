@@ -1,8 +1,6 @@
 public:: true
 
-- #+BEGIN_QUOTE
-  [whoami](https://gianlu.ca)
-  #+END_QUOTE
+- [whoami](https://gianlu.ca)
 - Knowledge Base
 	- Initial Steps
 		- [Windows]([[Windows Initial Steps]])
