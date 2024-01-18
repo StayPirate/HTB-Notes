@@ -3,6 +3,7 @@ public:: true
 - The **[Domain Controller](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))** is a server that provides all the services needed for managing activities occurring in your IT environment. In particular, it makes sure each person is who they claim to be (*authentication*) and allow them to access only the data they’re allowed to use (*authorization*). There are several services running on it, like:
   id:: 65a7a0b2-f9d2-436b-b4f2-369427fa7489
 	- The **AD** *([Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview))*, it is a database (directory) holding information about AD objects in the domain. Common types of AD objects include: User, Groups, Computers, Applications, Printers, Shared folders.
+	  id:: 65a7a0b2-a866-414f-b6af-04542a7e6656
 	- The **KDC** *([Key Distribution Center](https://learn.microsoft.com/en-us/windows/win32/secauthn/key-distribution-center))* holds a database of the keys used in the authentication process and consists of two main parts:
 	  id:: 6565b3f7-61b6-4b2a-a59d-01d20e6acd96
 		- The  *Authentication Service* (AS) responsible for authenticating clients and issuing [TGT](((655b1bc6-5c5d-4c70-9d2b-f3f3d6458cb9)))s.

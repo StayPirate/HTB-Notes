@@ -32,8 +32,11 @@ public:: true
 			- [[Pass-The-Ticket]]
 			- [[DCOM]]
 		- [Persistence]([[AD Persistence]])
+			- [[DCSync]]
 			- [[Golden Ticket]]
-			- Shadow Copies
+			- [[Shadow Copy]]
+			  background-color:: pink
+			- [[NTDS]]
 		- Security Enforcement
 			- [[Protected Users Security Group]]
 		- Authentication
@@ -57,6 +60,7 @@ public:: true
 			- [[Silver Tickets]]
 			- [[Golden Ticket]]
 			- [[DCSync]]
+			- [[Shadow Copy]]
 			- [[RC4 AS-REP Decryption]]
 			  background-color:: yellow
 	- Awesome tools and where to find them

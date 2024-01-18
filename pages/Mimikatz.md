@@ -55,7 +55,7 @@ public:: true
 	  {{embed ((65686a95-2f8d-4c16-ba29-4ec6ce616cb4))}}
 	- Forge [[Silver Tickets]] 
 	  {{embed ((656a21e7-a8f6-4b59-9b30-521a3268a8f0))}}
-- DCSync attack
+- [[DCSync]] attack
 	- {{embed ((65a004e9-a008-4ad6-926f-fa50ba4608f6))}}
 - Overpass-The-Hash (upgraded a cached NTLM password hash to a Kerberos TGT to gain remote code execution)
 	- {{embed ((65a69974-9c42-41df-909e-67d73e121db1))}}

