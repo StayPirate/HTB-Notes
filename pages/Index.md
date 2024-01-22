@@ -13,13 +13,17 @@ public:: true
 		- [Windows]([[Windows Reverse Shells]])
 		- [Linux]([[Linux Reverse Shells]])
 	- [[Active Directory]]
-	  background-color:: pink
 		- Enumeration
 			- Manual
 				- [Legacy Windows Tools]([[Manual AD Enumeration via Legacy Windows Tools]])
 				- [PowerView]([[Manual AD Enumeration via PowerView]])
 			- Brute Force
 				- [Users]([[Kerberos User Enumeration]])
+		- [Privilege Escalation]([[AD Privilege Escalation]])
+			- Windows Access Control Mechanisms
+				- [Access Tokens]([[AD Access Tokens]])
+				- [[Mandatory Integrity Control]]
+				- [[User Account Control]]
 		- [Lateral Movement](https://attack.mitre.org/tactics/TA0008/)
 			- [Tips]([[AD Lateral Movement Tips]])
 			- [[WMI]]

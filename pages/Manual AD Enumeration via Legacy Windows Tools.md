@@ -125,7 +125,7 @@ public:: true
 	          HTTP/web04
 	          HTTP/web04.corp.com:80
 	  ```
-- Retrieve the Domain SID
+- Retrieve the Domain SID from the domain-user SID
   id:: 6568a492-a226-4069-a5ef-127a23fb9de5
 	- Since the user SID contains the domain SID, we can retrieve the user SID and omit the RID of the user (`-1105` below)
 	  ```cmd

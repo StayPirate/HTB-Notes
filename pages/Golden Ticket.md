@@ -33,7 +33,7 @@ public:: true
 - Forge TGT with stolen *krbtgt* password (NTML hash) and inject it in-memory
 	- Ingredients
 		- *krbtgt* password hash
-		- Domain [SID](((65a7d701-e9cd-40ea-aa80-7322b2b18fee)))
+		- Domain [SID]()
 	- With [[Mimikatz]] from a domain-joined machine (not the DC)
 	  id:: 65a7d51a-e45d-454a-b4fd-7f314589d634
 		- First delete any existing loaded tickets (TGT, TGS) with [`kerberos::purge`](https://github.com/gentilkiwi/mimikatz/wiki/module-~-kerberos#purge)
