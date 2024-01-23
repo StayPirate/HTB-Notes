@@ -25,12 +25,16 @@ public:: true
 				- [[Mandatory Integrity Control]]
 				- [[User Account Control]]
 			- [Situational Awareness]([[AD Situational Awareness]])
+			- [Low-Hanging Fruit]([[Low-Hanging Fruit in Windows]])
+				- [[PowerShell History]]
+				  background-color:: pink
 		- [Lateral Movement](https://attack.mitre.org/tactics/TA0008/)
 			- [Tips]([[AD Lateral Movement Tips]])
 			- [[WMI]]
 			- [[WinRM]]
 			- [[PsExec]]
 			- [[Pass-The-Hash]]
+			  id:: 65a7a0af-5ba2-431e-8d4a-14234d7a95e7
 			- [[Overpass-The-Hash]]
 			- [[Pass-The-Ticket]]
 			- [[DCOM]]
@@ -84,6 +88,8 @@ public:: true
 			- [[Patator]]
 			  background-color:: yellow
 			- [Kerberoast]([[Kerberoast tool]])
+			  background-color:: yellow
+			- [[winPEAS]]
 			  background-color:: yellow
 		- Cracking
 			- [[Hashcat]]

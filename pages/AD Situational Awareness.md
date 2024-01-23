@@ -19,8 +19,8 @@ public:: true
 		- Now we know that we have command execution as user *dave*
 		- The hostname of the system is *clientwk220*
 			- It seems to be a workstation rather than a server.
-- Group memberships of the current user
-	- We can run `whoami /groups`.
+- Group memberships
+	- We can run `whoami /groups`
 	  ```cmd
 	  C:\Users\dave> whoami /groups
 	  whoami /groups
@@ -41,6 +41,20 @@ public:: true
 	  ```
 		- *dave* is a member of the **helpdesk group** and helpdesk staff often have additional permissions and access compared to standard users.
 		- *dave* is a member of **BUILTIN\Remote Desktop Users** and the membership of this group offers the possibility to **connect to the system via RDP**.
+	- We can also use  `net user` for domain users.
+	  ```cmd
+	  C:\Users\dave> net user steve
+	  net user steve
+	  User name                    steve
+	  ...
+	  Last logon                   6/16/2022 1:03:52 PM
+	  
+	  Logon hours allowed          All
+	  
+	  Local Group Memberships      *helpdesk             *Remote Desktop Users 
+	                               *Remote Management Use*Users                
+	  ...
+	  ```
 - Existing users and groups
 	- To enumerate local users we can use the [`net user`](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771865(v=ws.11)) command or the [`Get-LocalUser`](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.localaccounts/get-localuser?view=powershell-5.1) cmdlet in PowerShell.
 	  ```powershell
@@ -220,7 +234,7 @@ public:: true
 			- `-o` to show the process ID for each connection.
 			- The ports `80` and `443` are listening, usually indicating that a web server is running on the system.
 			- The listening port `3306` is indicative of a running MySQL server.
-			- The listening port `3389` is indicative that the system can be accessed via RDP.
+			- The listening port `3389` is indicative that the system can be accessed via RDP (you need the user password [or]([[Pass-The-Hash]]) its [hash](https://www.kali.org/blog/passing-hash-remote-desktop/) to log via RDP).
 			- Port `4444` is the bind shell we are using to access the system, indeed `192.168.119.3` is our IP address.
 				- It doesn't shown as a listening port because the `netcat` command we used to run the bind shell does not fork after the first successful connection.
 			- The established connection to port `3389` from the IP `192.168.119.4` indicates that we are not the only user connected to the system at that moment.
@@ -228,6 +242,7 @@ public:: true
 - Installed applications
 	- We can use the [`Get-ItemProperty`](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-itemproperty?view=powershell-7.2) cmdlet in PowerShell to query the *Windows Registry* to list all the installed 32 and 64 bit installed applications.
 		- 32 bit
+		  id:: 65afa6b7-48a0-4e1e-bed6-26b11224ff1e
 		  ```powershell
 		  PS C:\Users\dave> Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname 
 		  Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname

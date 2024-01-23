@@ -1,7 +1,7 @@
 public:: true
 
 - [WinRM](https://learn.microsoft.com/en-us/windows/win32/winrm/portal) is the Microsoft version of the [*Web Services-Management*](https://en.wikipedia.org/wiki/WS-Management) (WS-Management) open standard protocol.
-- It establishes a session with a remote computer through the SOAP-based WS-Management protocol rather than a connection through DCOM, as [[WMI]] does. Data returned using the WS-Management protocol is formatted in XML instead of as objects.
+- It establishes a session with a remote computer through the SOAP-based WS-Management protocol rather than a connection through [[DCOM]] , as [[WMI]] does. Data returned using the WS-Management protocol is formatted in XML instead of as objects.
 - #+BEGIN_IMPORTANT
   It exchanges XML messages over HTTP and HTTPS. For that it uses **TCP port 5986 for encrypted HTTPS traffic** and **port 5985 for plain HTTP**.
   #+END_IMPORTANT

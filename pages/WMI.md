@@ -5,6 +5,7 @@ public:: true
   It uses **port 135** for remote access and uses a higher-range port *(19152-65535)* for session data.
   #+END_PINNED
 - The `wmci` utility has been [deprecated around 21H1](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features), but let see how it can be used to spawn a process to a remote target for which we know administrator credentials
+  id:: 65a7a0b2-1d28-4245-9f26-d094d4c26a84
 	- ```cmd
 	  wmic /node:192.168.50.73 /user:jen /password:Nexus123! process call create "calc"
 	  ```
