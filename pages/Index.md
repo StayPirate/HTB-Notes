@@ -24,6 +24,7 @@ public:: true
 				- [Access Tokens]([[AD Access Tokens]])
 				- [[Mandatory Integrity Control]]
 				- [[User Account Control]]
+			- [Situational Awareness]([[AD Situational Awareness]])
 		- [Lateral Movement](https://attack.mitre.org/tactics/TA0008/)
 			- [Tips]([[AD Lateral Movement Tips]])
 			- [[WMI]]
