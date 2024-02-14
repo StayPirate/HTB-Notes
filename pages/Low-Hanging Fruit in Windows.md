@@ -41,8 +41,8 @@ public:: true
 		- **passwords.txt** contains the default passwords for the different XAMPP components.
 	- Let's search for documents *(*.txt,*.pdf,*.xls,*.xlsx,*.doc,*.docx)* within the user home directory *(C:\Users\dave\)*.
 	  ```powershell
-	  PS C:\Users\dave> Get-ChildItem -Path C:\Users\dave\ -Include *.txt,*.pdf,*.xls,*.xlsx,*.doc,*.docx -File -Recurse -ErrorAction SilentlyContinue
-	  Get-ChildItem -Path C:\Users\dave\ -Include *.txt,*.pdf,*.xls,*.xlsx,*.doc,*.docx -File -Recurse -ErrorAction SilentlyContinue
+	  PS C:\Users\dave> Get-ChildItem -Path C:\Users -Include *.txt,*.pdf,*.xls,*.xlsx,*.doc,*.docx,*.kdbx,*.kdb -File -Recurse -ErrorAction SilentlyContinue
+	  Get-ChildItem -Path C:\Users -Include *.txt,*.pdf,*.xls,*.xlsx,*.doc,*.docx,*.kdbx,*.kdb -File -Recurse -ErrorAction SilentlyContinue
 	  
 	      Directory: C:\Users\dave\Desktop
 	  

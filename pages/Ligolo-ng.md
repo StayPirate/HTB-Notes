@@ -94,6 +94,48 @@ public:: true
 		  ```bash
 		  sudo ip route add 172.16.212.0/24 dev ligolo
 		  ```
+	- Forward port rules
+		- If you want to expose one of your services to the internal network that an agent is pivoting to, then you can instruct the agent to listen to a specific port and, because it can reach back to you, redirect any traffic it gets to your machine (Kali) on a specific port.
+			- First you need to enter the agent session in your Ligolo-ng TUI and check if there's any active forwarding rule
+			  logseq.order-list-type:: number
+			  ```bash
+			  ligolo-ng » session
+			  ? Specify a session : 1 - #1 - MS01\Mary.Williams@MS01 - 192.168.231.141:56848
+			  [Agent : MS01\Mary.Williams@MS01] » listener_list 
+			  ┌───────────────────────────────────────────────────────────────────────┐
+			  │ Active listeners                                                      │
+			  ├───┬───────┬─────────┬────────────────────────┬────────────────────────┤
+			  │ # │ AGENT │ NETWORK │ AGENT LISTENER ADDRESS │ PROXY REDIRECT ADDRESS │
+			  ├───┼───────┼─────────┼────────────────────────┼────────────────────────┤
+			  └───┴───────┴─────────┴────────────────────────┴────────────────────────┘
+			  ```
+			- You can now configure a listener on the agent and instruct it to redirect all the traffic to your machine.
+			  logseq.order-list-type:: number
+			  ```bash
+			  listener_add --addr 0.0.0.0:8001 --to 127.0.0.1:8000 --tcp
+			  ```
+				- In this example we told the agent to listen on any interface on port `8001` and redirect all the traffic on that port to our Kali machine on port `8000`.
+				- If we are hosting a web-server on port `8000` in Kali, we can now reach from the machines in the intranet making them communicate via `<internal_agent_IP>:8001`
+			- If we now list active listener again for that agent we would see something like the following
+			  logseq.order-list-type:: number
+			  ```bash
+			  [Agent : MS01\Mary.Williams@MS01] » listener_list
+			  ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+			  │ Active listeners                                                                                                     │
+			  ├───┬──────────────────────────────────────────────────────┬─────────┬────────────────────────┬────────────────────────┤
+			  │ # │ AGENT                                                │ NETWORK │ AGENT LISTENER ADDRESS │ PROXY REDIRECT ADDRESS │
+			  ├───┼──────────────────────────────────────────────────────┼─────────┼────────────────────────┼────────────────────────┤
+			  │ 0 │ #1 - MS01\Mary.Williams@MS01 - 192.168.231.141:56848 │ tcp     │ 0.0.0.0:8001           │ 127.0.0.1:8000         │
+			  └───┴──────────────────────────────────────────────────────┴─────────┴────────────────────────┴────────────────────────┘
+			  
+			  ```
+	- Forward Local (AKA Agent) Ports
+		- If you need to access the local ports of the currently connected agent, there's a **magic IP** hardcoded in Ligolo-ng: `240.0.0.1` *(this IP address is part of an unused IPv4 subnet)*.
+		  If you query this IP address, Ligolo-ng will automatically redirect traffic to the agent's local IP address (127.0.0.1).
+		- You first need to add the following route
+		  ```bash
+		  sudo ip route add 240.0.0.1/32 dev ligolo
+		  ```
 - Limitation
   #+BEGIN_CAUTION
   Please consider the following tool limitation while interacting with ligolo-ng!

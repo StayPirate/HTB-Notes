@@ -7,7 +7,7 @@ public:: true
   #+END_IMPORTANT
 - You can use WinRM in different flavors: Powershell, [`winrs`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/winrs) or [`evil-winrm`](https://github.com/Hackplayers/evil-winrm) in linux
 - #+BEGIN_IMPORTANT
-  For WinRS to work, the domain user needs to be part of the **Administrators** or **Remote Management Users** group on the target host.
+  In order to connect via WinRM, the target user needs to be part of the **Administrators** or **Remote Management Users** group on the target host.
   #+END_IMPORTANT
 - Let's see how to use `winrs` to run the `whoami` command on a remote target logging as user *jen*.
 	- ```cmd

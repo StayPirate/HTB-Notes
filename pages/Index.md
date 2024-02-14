@@ -17,6 +17,7 @@ public:: true
 			- Manual
 				- [Legacy Windows Tools]([[Manual AD Enumeration via Legacy Windows Tools]])
 				- [PowerView]([[Manual AD Enumeration via PowerView]])
+				- [[SMB]]
 			- Brute Force
 				- [Users]([[Kerberos User Enumeration]])
 		- [Privilege Escalation]([[AD Privilege Escalation]])
@@ -28,6 +29,7 @@ public:: true
 			- [Low-Hanging Fruit]([[Low-Hanging Fruit in Windows]])
 				- [[PowerShell History]]
 				  background-color:: pink
+				- [[Password Spray]]
 		- [Lateral Movement](https://attack.mitre.org/tactics/TA0008/)
 			- [Tips]([[AD Lateral Movement Tips]])
 			- [[WMI]]
@@ -84,12 +86,17 @@ public:: true
 				- [GetNPUsers]([[Impacket GetNPUsers]])
 				- [GetUserSPNs]([[Impacket_GetUserSPNs]])
 				- [secretsdump]([[Impacket-secretsdump]])
+				- [lookupsid]([[Impacket-lookupsid]])
 			- [[Rubeus]]
 			- [[Patator]]
 			  background-color:: yellow
 			- [Kerberoast]([[Kerberoast tool]])
 			  background-color:: yellow
 			- [[winPEAS]]
+			  background-color:: yellow
+			- [[Responder]]
+			  background-color:: yellow
+			- [[Evil-WinRM]]
 			  background-color:: yellow
 		- Cracking
 			- [[Hashcat]]
