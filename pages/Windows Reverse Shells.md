@@ -1,5 +1,9 @@
 public:: true
 
+- Run program in background from powershell, like bind shells or other agents.
+	- ```powershell
+	  start-job { C:\users\chris\bind.exe }
+	  ```
 - Meterpreter
 	- Start the listener
 	  ```bash

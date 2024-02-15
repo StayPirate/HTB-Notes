@@ -2,6 +2,9 @@ public:: true
 
 - [whoami](https://gianlu.ca)
 - Knowledge Base
+	- Protocols
+		- [[SMNP]]
+		  background-color:: yellow
 	- Initial Steps
 		- [Windows]([[Windows Initial Steps]])
 		- [Linux]([[Linux Initial Steps]])
@@ -30,6 +33,8 @@ public:: true
 				- [[PowerShell History]]
 				  background-color:: pink
 				- [[Password Spray]]
+				  background-color:: yellow
+				- [[Services Takeover]]
 		- [Lateral Movement](https://attack.mitre.org/tactics/TA0008/)
 			- [Tips]([[AD Lateral Movement Tips]])
 			- [[WMI]]

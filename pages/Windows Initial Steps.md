@@ -101,16 +101,17 @@ Tags:: powershell, windows,grep
 	- Grepping
 	  logseq.order-list-type:: number
 		- For file name
-		  logseq.order-list-type:: number
 		  ```powershell
 		  Get-ChildItem -Recurse | Where {$_.Name -match 'Replace'} | Select Fullname
 		  Get-ChildItem | Where-Object { $_.Name -match '[a-z].txt$' }
 		  ```
 		- For folder name
-		  logseq.order-list-type:: number
-		  
 		  ```powershell
 		  Get-ChildItem -Recurse | Where {$_.DirectoryName -match 'Debug'} | Select Fullname
+		  ```
+		- Find file which contains the word *password*
+		  ```powershell
+		    findstr /si password *.txt *.xml *.ini
 		  ```
 	- Find files older than a specific date
 	  logseq.order-list-type:: number

@@ -41,6 +41,10 @@ public:: true
 		  ```powershell
 		  .\agent.exe -ignore-cert -connect 192.168.45.183:11601
 		  ```
+			- To run it in background in powershell
+			  ```powershell
+			  start-job { C:\users\web_svc\agent.exe -ignore-cert -connect 192.168.45.238:11601 }
+			  ```
 	- If everything went fine you should see the agent joining on the ligolo-ng server console
 	  ```
 	  ┌──(crazybyte㉿kali)-[~/OSCP/Labs/MEDTECH]
