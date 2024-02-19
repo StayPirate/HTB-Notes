@@ -1,3 +1,5 @@
+public:: true
+
 - If [[winPEAS]] tells you that there are services ran by privileged users for which you can swap the called binary and then restart the service.
 - WinPEAS returns something like this
   ```

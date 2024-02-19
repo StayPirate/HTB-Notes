@@ -28,6 +28,9 @@ public:: true
 		  (Get-PSReadlineOption).HistorySavePath
 		  C:\Users\dave\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 		  ```
+			- #+BEGIN_PINNED
+			  Sometimes other history files might be stored on that folder, so ensure to check anything inside it.
+			  #+END_PINNED
 		- We can now review the fully uncleared history by reading that file
 		  ```powershell
 		  PS C:\Users\dave> cat C:\Users\dave\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt

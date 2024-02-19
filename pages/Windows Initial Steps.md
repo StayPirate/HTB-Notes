@@ -111,8 +111,12 @@ Tags:: powershell, windows,grep
 		  ```
 		- Find file which contains the word *password*
 		  ```powershell
-		    findstr /si password *.txt *.xml *.ini
+		  Get-ChildItem -Recurse *.* | Select-String -Pattern "password" | Select-Object -Unique Path
 		  ```
+			- Print matching strings
+			  ```powershell
+			  Get-ChildItem -Recurse *.* | Select-String -Pattern "password"
+			  ```
 	- Find files older than a specific date
 	  logseq.order-list-type:: number
 	  

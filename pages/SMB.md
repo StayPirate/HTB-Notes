@@ -3,11 +3,12 @@ alias:: samba
 
 - Null Session
 	- TODO description
+	  background-color:: yellow
 	- With [[CrackMapExec]]
 	  ```bash
 	  crackmapexec smb 10.0.2.8 -u ‘’ -p ‘’
 	  ```
-	- With ...
+	- With [[enum4linux]]
 		- This tool attempts to establish a null session with the target and then uses RPC to extract useful information.
 		  ```bash
 		  enum4linux -a 10.0.2.8
@@ -17,6 +18,9 @@ alias:: samba
 			- Password policy information
 			- RID cycling output to enumerate users and groups
 			- More ...
+	- With [[enum4linux-ng]]
+		- TODO
+		  background-color:: yellow
 - Guest user
 	- If we didn't get any results with Null Session, then we can try to access with the well-known *Guest* user.
 	- With [[CrackMapExec]]

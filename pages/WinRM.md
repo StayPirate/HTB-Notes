@@ -36,3 +36,5 @@ public:: true
 		- ```powershell
 		  Enter-PSSession 1
 		  ```
+- With [[Evil-WinRM]]
+	- TODO

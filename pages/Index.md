@@ -21,6 +21,7 @@ public:: true
 				- [Legacy Windows Tools]([[Manual AD Enumeration via Legacy Windows Tools]])
 				- [PowerView]([[Manual AD Enumeration via PowerView]])
 				- [[SMB]]
+				  background-color:: yellow
 			- Brute Force
 				- [Users]([[Kerberos User Enumeration]])
 		- [Privilege Escalation]([[AD Privilege Escalation]])
@@ -39,6 +40,7 @@ public:: true
 			- [Tips]([[AD Lateral Movement Tips]])
 			- [[WMI]]
 			- [[WinRM]]
+			  background-color:: yellow
 			- [[PsExec]]
 			- [[Pass-The-Hash]]
 			  id:: 65a7a0af-5ba2-431e-8d4a-14234d7a95e7
@@ -103,6 +105,8 @@ public:: true
 			  background-color:: yellow
 			- [[Evil-WinRM]]
 			  background-color:: yellow
+			- [[enum4linux]]
+			- [[enum4linux-ng]]
 		- Cracking
 			- [[Hashcat]]
 			- [[John The Ripper]]

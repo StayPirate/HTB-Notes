@@ -299,3 +299,32 @@ public:: true
 	  ...
 	  ```
 		- Due to the active process named *xampp-control*, we can infer that both Apache *(httpd)* and MySQL *(mysqld)* were started through XAMPP.
+- Check other partitions
+	- You can check if other partitions are available as they might contains sensible information.
+		- With `diskpart`
+		  ```cmd
+		  C:\Users> diskpart
+		  
+		  Microsoft DiskPart version 10.0.19041.964
+		  
+		  Copyright (C) Microsoft Corporation.
+		  On computer: MS01
+		  
+		  DISKPART> list volume
+		  
+		    Volume ###  Ltr  Label        Fs     Type        Size     Status     Info
+		    ----------  ---  -----------  -----  ----------  -------  ---------  --------
+		    Volume 0     D                       DVD-ROM         0 B  No Media
+		    Volume 1     C                NTFS   Partition     39 GB  Healthy    Boot
+		    Volume 2                      FAT32  Partition    100 MB  Healthy    System
+		    Volume 3                      NTFS   Partition    499 MB  Healthy    Hidden
+		  ```
+		- With Poweshell
+		  ```powershell
+		  PS C:\Users> get-psdrive -psprovider filesystem
+		  
+		  Name           Used (GB)     Free (GB) Provider      Root	CurrentLocation
+		  ----           ---------     --------- --------      ----	---------------
+		  C                  29.73          9.67 FileSystem    C:\	Users
+		  D                                      FileSystem    D:\
+		  ```

