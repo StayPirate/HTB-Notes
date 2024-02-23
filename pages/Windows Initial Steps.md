@@ -1,40 +1,36 @@
 public:: true
 Tags:: powershell, windows,grep
 
-- #### Check current user privileges
+- **Check current user privileges**
   logseq.order-list-type:: number
-  
   ```powershell
   whoami /priv
   ```
-- #### Gather some information on our target system
+- **Gather some information on our target system**
   logseq.order-list-type:: number
-  
   ```powershell
   systeminfo | findstr /B /C:"Domain" /C:"Host Name" /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Hotfix(s)"
   ```
-- #### Check for stored credentials on the system
+- **Check for stored credentials on the system**
   logseq.order-list-type:: number
-  
   ```powershell
   cmdkey /list
   ```
-- #### Check if current user is part of any interesting groups
+- **Check if current user is part of any interesting groups**
   logseq.order-list-type:: number
-  
   ```powershell
   net user <username>
   net user [Environment]::UserName # Need to be tested
   ```
-- #### Check who's part of the local administrators group
+- **Check who's part of the local administrators group**
   logseq.order-list-type:: number
   ```powershell
   net localgroup administrators
   ```
-- Get a list of domain user accounts with associated SPNs ([[Kerberoasting]])
+- **Get a list of domain user accounts with associated SPNs** ([[Kerberoasting]])
   logseq.order-list-type:: number
   {{embed ((65684a10-0764-4ca6-ad8e-1053e99ded78))}}
-- #### Hunt for any non-standard folders and files
+- **Hunt for any non-standard folders and files**
   logseq.order-list-type:: number
 	- Search in `C:\`
 	  
@@ -46,7 +42,8 @@ Tags:: powershell, windows,grep
 	  cmd.exe /c dir /a C:\Program........
 	  ```
 		- TODO Search in both Program Files directories
-- logseq.order-list-type:: number
+- **Check assess permissions**
+  logseq.order-list-type:: number
 	- `icacls` (built-in)
 	  logseq.order-list-type:: number
 	  
@@ -57,7 +54,6 @@ Tags:: powershell, windows,grep
 	- `accesschk` (from the Sysinternals Suite)
 	  logseq.order-list-type:: number
 	  *If you don’t have the Sysinternals Suite on your attacker machine, you can grab it [here](https://docs.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite).*
-	  
 	  ```powershell
 	  # Example folder
 	  .\accesschk64.exe -wvud "C:\Custom Tasks\Backup" -accepteula
@@ -65,7 +61,7 @@ Tags:: powershell, windows,grep
 	  .\accesschk64.exe -wvu "C:\Custom Tasks\Backup\tftp.exe" -accepteula
 	  ```
 	  The ‘-d’ switch checks permissions of the folder itself. Without `-d` it checks permissions of all the files inside the folder.
-- #### Search for interesting folders or files
+- **Search for interesting folders or files**
   logseq.order-list-type:: number
 	- Recursively search in the `C:\Users` folder to see if we are able to list any folders/files in other users profile folders
 	  logseq.order-list-type:: number

@@ -65,7 +65,7 @@ alias:: UAC
 		- If `EnableLua=1` and `LocalAccountTokenFilterPolicy=0` and `FilterAdministratorToken=1`, UAC for everyone
 - **UAC Bypass**
 	- #+BEGIN_CAUTION
-	  Note that if you have graphical access to the victim, UAC bypass is straight forward as you can simply click on "Yes" when the UAS prompt appears
+	  Note that if you have graphical access to the victim, UAC bypass is straight forward as you can simply click on "Yes" when the UAC prompt appears
 	  #+END_CAUTION
 	- If UAC is already disabled (`ConsentPromptBehaviorAdmin` is `0`) you can execute a reverse shell with admin privileges (high integrity level) using something like:
 	  ```powershell

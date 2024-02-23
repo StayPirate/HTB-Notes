@@ -38,3 +38,16 @@ public:: true
 		  ```
 - With [[Evil-WinRM]]
 	- TODO
+	  background-color:: yellow
+	- #+BEGIN_CAUTION
+	  Don't forget to use the **backslash** instead of the slash web try to connect with a specified domain
+	  #+END_CAUTION
+		- ```bash
+		  # WORKS
+		  # =====
+		  evil-winrm -i 172.16.197.11 -p 'Password1' -u 'DOMAIN\joe'
+		  
+		  # DON'T WORK
+		  # ==========
+		  evil-winrm -i 172.16.197.11 -p 'Password1' -u 'DOMAIN/joe'
+		  ```

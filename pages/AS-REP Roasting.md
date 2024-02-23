@@ -11,7 +11,7 @@ public:: true
 			- With PowerView
 			  id:: 655cf631-e9b4-4a1f-99d0-45c801c69f8c
 			  ```powershell
-			  Get-DomainUser -KerberosPreuthNotRequired -verbose
+			  Get-DomainUser -PreauthNotRequired
 			  ```
 			  ```powershell
 			  # Users with Pre-Authentication disabled AND without expired passwords

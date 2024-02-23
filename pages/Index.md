@@ -2,9 +2,17 @@ public:: true
 
 - [whoami](https://gianlu.ca)
 - Knowledge Base
+	- Information Gathering
+		- Passive
+		- Active
+			- Network
+				- [Ports]([[Information Gathering Ports]])
 	- Protocols
 		- [[SMNP]]
 		  background-color:: yellow
+	- Attack Vectors
+		- [[SQL Injection]]
+			- [[Microsoft SQL]]
 	- Initial Steps
 		- [Windows]([[Windows Initial Steps]])
 		- [Linux]([[Linux Initial Steps]])
@@ -76,6 +84,8 @@ public:: true
 			- [[Silver Tickets]]
 			- [[Golden Ticket]]
 			- [[DCSync]]
+			- [[Abuse AD CS]]
+			  background-color:: yellow
 			- [[Shadow Copy]]
 			- [[RC4 AS-REP Decryption]]
 			  background-color:: yellow

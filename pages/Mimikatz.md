@@ -78,6 +78,10 @@ public:: true
 	- Sometimes Mimikatz returns plain-text passwords instead of their hashes, this is because [[WDigest]] is enabled.
 	- That's the case of older operating systems like Windows 7, or operating systems where Wdigest has been manually enabled.
 - Dump
+  background-color:: red
+- Vault
+  background-color:: red
+	- https://tools.thehacker.recipes/mimikatz/modules/vault/cred
 - Abusing TGT and service tickets
 	- To dump tickets from LSASS process memory we can use the [`sekurlsa::tickets`](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa#tickets) command.
 	  {{embed ((65686a95-2f8d-4c16-ba29-4ec6ce616cb4))}}
