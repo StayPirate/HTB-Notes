@@ -20,6 +20,10 @@ public:: true
   KiteService	C:\program files\Kite\KiteService.exe	LocalSystem	Running
   [...]
   ```
+	- To check the owner of a specific process
+	  ```cmd
+	  tasklist /v
+	  ```
 - Stop the service
   ```powershell
   stop-service -name kiteservice
