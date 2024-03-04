@@ -44,6 +44,11 @@ public:: true
 				- [[Password Spray]]
 				  background-color:: yellow
 				- [[Services Takeover]]
+			- Exploit
+				- The Potato Family
+				- PrintSpoofer
+				- The Ethernal Family
+				- Zerologon
 		- [Lateral Movement](https://attack.mitre.org/tactics/TA0008/)
 			- [Tips]([[AD Lateral Movement Tips]])
 			- [[WMI]]
@@ -89,6 +94,8 @@ public:: true
 			- [[Shadow Copy]]
 			- [[RC4 AS-REP Decryption]]
 			  background-color:: yellow
+			- Exploits
+				- Zerologon
 	- Awesome tools and where to find them
 		- Network
 			- [[Ligolo-ng]]
@@ -117,6 +124,7 @@ public:: true
 			  background-color:: yellow
 			- [[enum4linux]]
 			- [[enum4linux-ng]]
+			- Powercat
 		- Cracking
 			- [[Hashcat]]
 			- [[John The Ripper]]

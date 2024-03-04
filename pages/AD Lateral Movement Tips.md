@@ -22,3 +22,11 @@ public:: true
   #+END_TIP
 - {{embed ((655cf4a9-95ae-4eb8-be69-cd1fb9b251c6))}}
 - {{embed ((655e327e-5e4b-4260-828e-33941dad976c))}}
+- ntlmsum
+  ```bash
+  python -c 'import hashlib,binascii; print(binascii.hexlify(hashlib.new("md4", "<PASSWORD>".encode("utf-16le")).digest()))'
+  ```
+	- TODO convertire in una funzione cosi' da prendere `<PASSWORD>` come primo parametro
+	  background-color:: pink
+	- TODO creare un alias `ntlmsum`
+	  background-color:: pink
