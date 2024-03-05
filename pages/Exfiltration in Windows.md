@@ -1,6 +1,6 @@
 public:: true
 
-- Python upload web-server
+- Python [uploadserver](https://pypi.org/project/uploadserver/)
 	- On Kali
 	  ```bash
 	  python3 -m uploadserver 8080
