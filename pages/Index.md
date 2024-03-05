@@ -7,6 +7,8 @@ public:: true
 		- Active
 			- Network
 				- [Ports]([[Information Gathering Ports]])
+			- Users Enumeration
+				- [SMTP]([[User Enumeration via SMTP]])
 	- Protocols
 		- [[SMNP]]
 		  background-color:: yellow
@@ -23,6 +25,8 @@ public:: true
 	- [[Reverse Shells]]
 		- [Windows]([[Windows Reverse Shells]])
 		- [Linux]([[Linux Reverse Shells]])
+	- Exfiltration
+		- [Windows]([[Exfiltration in Windows]])
 	- [[Active Directory]]
 		- Enumeration
 			- Manual
