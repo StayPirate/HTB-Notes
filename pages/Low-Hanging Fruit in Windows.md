@@ -51,6 +51,16 @@ public:: true
 	  ----                 -------------         ------ ----                                                                 
 	  -a----         6/16/2022  11:28 AM            339 meeting-minutes.txt
 	  ```
+- Credentials in Windows Registry
+	- Search if any occurence of *password*
+	  ```cmd
+	  reg query HKLM /f password /t REG_SZ /s
+	  reg query HKCU /f password /t REG_SZ /s
+	  ```
+	- Search for PuTTY credentials
+	  ```cmd
+	  reg query HKCU\Software\SimonTatham\PuTTY\Sessions /t REG_SZ /s
+	  ```
 - To log as a different user after we retrieve his credentials (either plaintext password or its hash) we could:
 	- If the user is a member of the `Remote Desktop Users` group and RDP port is reachable we can use RDP.
 	- If the user is a member of the `Remote Management Users` or `Administrators` group and either port 5986 or 5985 are open, then we can use [[WinRM]].
