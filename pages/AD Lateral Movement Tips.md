@@ -22,11 +22,21 @@ public:: true
   #+END_TIP
 - {{embed ((655cf4a9-95ae-4eb8-be69-cd1fb9b251c6))}}
 - {{embed ((655e327e-5e4b-4260-828e-33941dad976c))}}
-- ntlmsum
-  ```bash
-  python -c 'import hashlib,binascii; print(binascii.hexlify(hashlib.new("md4", "<PASSWORD>".encode("utf-16le")).digest()))'
-  ```
-	- TODO convertire in una funzione cosi' da prendere `<PASSWORD>` come primo parametro
-	  background-color:: pink
-	- TODO creare un alias `ntlmsum`
-	  background-color:: pink
+- `ntlmsum` utility
+  There are many helpers in bash to check hashes for different digests *(e.g. `md5sum`, `sha256sum`, etc.)*, but not for ntlm.
+	- We can achieve that with the openssl command and the right encoding, as shown below
+	  ```bash
+	  ┌──(crazybyte㉿kali)-[~]
+	  └─$ echo -n password | iconv -f UTF-8 -t UTF-16LE | openssl dgst -r -md4 -hex | cut -c -32
+	  8846f7eaee8fb117ad06bdd830b7586c
+	  ```
+	- To make it easily available from zsh in Kali we can add the following alias to `~/.zshrc`
+	  ```bash
+	  alias ntlmsum='f(){ echo -n "${1}" | iconv -f UTF-8 -t UTF-16LE | openssl dgst -r -md4 -hex | cut -c -32 };f'
+	  ```
+	- Then  simply use `ntlmsum` from a new shell
+	  ```bash
+	  ┌──(crazybyte㉿kali)-[~]
+	  └─$ ntlmsum password
+	  8846f7eaee8fb117ad06bdd830b7586c
+	  ```
