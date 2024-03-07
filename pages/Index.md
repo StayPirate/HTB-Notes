@@ -15,6 +15,7 @@ public:: true
 	- Attack Vectors
 		- [[SQL Injection]]
 			- [[Microsoft SQL]]
+		- [LFI]([[Local File Include]])
 	- Initial Steps
 		- [Windows]([[Windows Initial Steps]])
 		- [Linux]([[Linux Initial Steps]])
@@ -115,6 +116,8 @@ public:: true
 				- [GetUserSPNs]([[Impacket_GetUserSPNs]])
 				- [secretsdump]([[Impacket-secretsdump]])
 				- [lookupsid]([[Impacket-lookupsid]])
+				- [psexec]([[impacket-psexec]])
+				- [wmiexec]([[impacket-wmiexec]])
 			- [[Rubeus]]
 			- [[Patator]]
 			  background-color:: yellow

