@@ -1,3 +1,5 @@
+public:: true
+
 - #+BEGIN_QUOTE
   [RFC4757](https://datatracker.ietf.org/doc/html/rfc4757): The RC4-HMAC Kerberos Encryption Types Used by Microsoft Windows
   #+END_QUOTE
