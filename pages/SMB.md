@@ -1,6 +1,9 @@
 public:: true
 alias:: samba
 
+- There are quite a few important differences between a Null Session and Guest users, and are very well explained by Aurélien (Defte) Chalot in his [blog post](https://sensepost.com/blog/2024/guest-vs-null-session-on-windows/).
+	- NetExec [better handle this](https://github.com/Pennyw0rth/NetExec/pull/333) since `v1.3.0`.
+	- TODO add a TL;DR for the blog post
 - Null Session
 	- TODO description
 	  background-color:: yellow

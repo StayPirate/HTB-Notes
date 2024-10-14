@@ -65,6 +65,7 @@ public:: true
 			- [[Overpass-The-Hash]]
 			- [[Pass-The-Ticket]]
 			- [[DCOM]]
+			- [[Security Questions]]
 		- [Persistence]([[AD Persistence]])
 			- [[DCSync]]
 			- [[Golden Ticket]]
